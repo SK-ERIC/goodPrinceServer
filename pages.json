@@ -1,0 +1,111 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	{
+		"path": "pages/login/login",
+		"style": {
+			"navigationStyle": "custom"
+		}
+	},
+		{
+			"path": "pages/shop/shopCenter",
+			"style": {
+				"navigationBarTitleText": "商家中心"
+			}
+		},
+		{
+			"path": "pages/login/authentication",
+			"style": {
+				"navigationBarTitleText": "商家实名认证",
+				"navigationBarBackgroundColor": "#536BB9",
+				"navigationBarTextStyle": "white"
+			}
+		},
+		{
+			"path": "pages/login/status",
+			"style": {
+				"navigationBarTitleText": "实名认证"
+			}
+		},
+		{
+			"path": "pages/login/shopAuth",
+			"style": {
+				"navigationBarTitleText": "实名认证"
+			}
+		},
+		{
+			"path": "pages/login/base",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},
+
+		{
+			"path": "pages/shop/shopInfo",
+			"style": {
+				"navigationBarTitleText": "商家资料"
+			}
+		},
+		{
+			"path": "pages/shop/check",
+			"style": {
+				"navigationBarTitleText": "实名认证"
+			}
+		},
+		{
+			"path": "pages/shop/contactUs",
+			"style": {
+				"navigationBarTitleText": "联系我们"
+			}
+		},
+		{
+			"path": "pages/shop/set",
+			"style": {
+				"navigationBarTitleText": "设置"
+			}
+		},
+		{
+			"path": "pages/shop/accountChange",
+			"style": {
+				"navigationBarTitleText": "账号更换"
+			}
+		},
+		{
+			"path": "pages/shop/changeSuccess",
+			"style": {
+				"navigationBarTitleText": "账号更换成功"
+			}
+		},
+		{
+			"path": "pages/shop/leaveWord",
+			"style": {
+				"navigationBarTitleText": "顾客留言"
+			}
+		},
+		{
+			"path": "pages/shop/QRCode",
+			"style": {
+				"navigationBarTitleText": "生成二维码"
+			}
+		},
+
+		{
+			"path": "pages/user/msg",
+			"style": {
+				"navigationBarTitleText": "系统消息"
+			}
+		},
+		{
+			"path": "pages/user/msgDetail",
+			"style": {
+				"navigationBarTitleText": "消息详情"
+			}
+		}
+
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "无锡好印象",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#F8F8F8"
+	}
+}

@@ -1,0 +1,272 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.container.data-v-1fdd529c {
+  background-color: #FFFFFF;
+}
+.container .comment-section.data-v-1fdd529c {
+  padding: 0 40rpx;
+}
+.container .comment-section .title.data-v-1fdd529c {
+  font-size: 36rpx;
+  color: #282828;
+  font-weight: 500;
+  line-height: 96rpx;
+}
+.container .comment-section .comment-list.data-v-1fdd529c {
+  padding-top: 10rpx;
+}
+.container .comment-section .comment-list .comment-cont.data-v-1fdd529c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 50rpx;
+  border-bottom: 2rpx solid #EFEFEF;
+}
+.container .comment-section .comment-list .comment-cont.data-v-1fdd529c:last-child {
+  border-bottom: none;
+}
+.container .comment-section .comment-list .comment-cont .info-wrap.data-v-1fdd529c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+  padding-top: 27rpx;
+}
+.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-l image.data-v-1fdd529c {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-r.data-v-1fdd529c {
+  margin-left: 22rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+}
+.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-r .user.data-v-1fdd529c {
+  font-size: 32rpx;
+  color: #222222;
+  font-weight: 500;
+}
+.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-r .date.data-v-1fdd529c {
+  font-size: 24rpx;
+  color: #B1B1B1;
+  font-weight: 400;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner.data-v-1fdd529c {
+  padding-left: 114rpx;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap.data-v-1fdd529c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin: 45rpx 0 40rpx;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-l.data-v-1fdd529c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+          align-items: baseline;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-l .text.data-v-1fdd529c {
+  color: #282828;
+  font-size: 24rpx;
+  font-weight: 500;
+  margin-right: 16rpx;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r.data-v-1fdd529c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r .like-icon.data-v-1fdd529c {
+  width: 34rpx;
+  height: 34rpx;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r .text.data-v-1fdd529c {
+  font-size: 30rpx;
+  color: #B1B1B1;
+  font-weight: 400;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .art.data-v-1fdd529c {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333333;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .art.cut.data-v-1fdd529c {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  overflow: hidden;
+  white-space: normal;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .fullText.data-v-1fdd529c {
+  font-size: 30rpx;
+  color: #FF903A;
+  margin: 26rpx 0 14rpx;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .img-list.data-v-1fdd529c {
+  padding: 30rpx 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .img-list .img-cont.data-v-1fdd529c {
+  margin-right: 18rpx;
+  margin-bottom: 18rpx;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .img-list .img-cont.data-v-1fdd529c:nth-child(3n) {
+  margin-right: 0;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .img-list .img-cont image.data-v-1fdd529c {
+  width: 174rpx;
+  height: 174rpx;
+  border-radius: 14rpx;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .reply-warp.data-v-1fdd529c {
+  min-height: 70rpx;
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: #989897;
+  background-color: #F3F3F4;
+  border-radius: 6rpx;
+}
+.container .comment-section .comment-list .comment-cont .comment-inner .reply-warp .reply.data-v-1fdd529c {
+  color: #333333;
+  font-weight: 500;
+  word-break: keep-all;
+  display: inline;
+}
+.container .comment-section .comment-list .nthing-section.data-v-1fdd529c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding-top: 230rpx;
+  padding-bottom: 130rpx;
+}
+.container .comment-section .comment-list .nthing-section .nthing-img.data-v-1fdd529c {
+  width: 220rpx;
+  height: 220rpx;
+}
+.container .comment-section .comment-list .nthing-section .nthing-text.data-v-1fdd529c {
+  margin: 40rpx 0 56rpx;
+  font-size: 30rpx;
+  color: #AFB0B5;
+}
+.container .comment-section .comment-list .nthing-section .nthing-btn.data-v-1fdd529c {
+  width: 480rpx;
+  height: 100rpx;
+  background-color: #FF544C;
+  border-radius: 50rpx;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  text-align: center;
+  font-weight: 400;
+}
+.container .pop-section.data-v-1fdd529c {
+  width: 590rpx;
+  height: 480rpx;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+}
+.container .pop-section .title.data-v-1fdd529c {
+  font-size: 34rpx;
+  color: #666666;
+  line-height: 122rpx;
+}
+.container .pop-section .cont.data-v-1fdd529c {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+          flex: 1;
+  margin-top: 26rpx;
+  font-size: 30rpx;
+  color: #666666;
+  width: 390rpx;
+  line-height: 44rpx;
+}
+.container .pop-section .btn.data-v-1fdd529c {
+  width: 440rpx;
+  height: 90rpx;
+  background-color: #FF544C;
+  color: #FFFFFF;
+  border-radius: 45rpx;
+  margin-bottom: 75rpx;
+}
+

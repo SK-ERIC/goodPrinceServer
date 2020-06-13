@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "顾客留言",
+  "usingComponents": {
+    "uni-rate": "/components/uni-rate/uni-rate",
+    "com-list": "/pages/component/commentList",
+    "pop": "/pages/component/pop"
+  }
+}

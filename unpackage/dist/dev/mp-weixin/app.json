@@ -1,0 +1,32 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/shop/shopCenter",
+    "pages/login/authentication",
+    "pages/login/status",
+    "pages/login/shopAuth",
+    "pages/login/base",
+    "pages/shop/shopInfo",
+    "pages/shop/check",
+    "pages/shop/contactUs",
+    "pages/shop/set",
+    "pages/shop/accountChange",
+    "pages/shop/changeSuccess",
+    "pages/shop/leaveWord",
+    "pages/shop/QRCode",
+    "pages/user/msg",
+    "pages/user/msgDetail"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "无锡好印象",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F8F8F8"
+  },
+  "usingComponents": {
+    "mescroll-body": "/components/mescroll-uni/mescroll-body",
+    "mescroll-uni": "/components/mescroll-uni/mescroll-uni"
+  },
+  "sitemapLocation": "sitemap4.json"
+}

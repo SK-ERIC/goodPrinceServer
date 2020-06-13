@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商家中心",
+  "usingComponents": {
+    "uni-rate": "/components/uni-rate/uni-rate"
+  }
+}

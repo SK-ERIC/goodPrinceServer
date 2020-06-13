@@ -1,0 +1,196 @@
+
+  page{
+    background-color: #FFFFFF;
+  }
+  // 
+  .s-preview-btn,.s-save-btn{
+	  margin: 0 auto;
+	  width:540rpx;
+	  height:100rpx;
+	  line-height: 100rpx;
+	  text-align: center;
+	  font-size: 30rpx;
+	  box-sizing: border-box;
+  }
+  .s-preview-btn{
+	  // background:rgba(250,250,250,1);
+	  background:transparent;
+	  border:1px solid rgba(70,121,240,1);
+	  color: #4679F0;
+	  border-radius:4rpx;
+  }
+  .s-save-btn{
+	  background:rgba(70,121,240,1);
+	  color: #fff;
+  }
+  // 
+   .tl{
+     text-align: left;
+   }
+   .tr{
+     text-align: right;
+   }
+  .splitCls{
+    width: 100%;
+    height: 20rpx;
+    background:rgba(245,245,245,1);
+  }
+  .empty-text{
+    font-size: 30rpx;
+    color: #666;
+    margin-top: 18rpx;
+  }
+  .scroll_top {
+      background: rgba(51, 51, 51, .8);
+      width: 35px;
+      height: 35px;
+      border-radius: 35px;
+      -moz-border-radius: 35px;
+      -webkit-border-radius: 35px;
+      -o-border-radius: 35px;
+      -ms-border-radius: 35px;
+      text-align: center;
+      line-height: 35px;
+      color: #fff;
+      position: fixed;
+      z-index: 1;
+      zoom: 1;
+      right: 20px;
+      bottom: 25px;
+      opacity: 0;
+      -webkit-transform: translateY(100px) translateX(0);
+      transform: translateY(100px) translateX(0);
+      transition: all .4s ease 0s;
+      -o-transition: all .4s ease 0s;
+      -moz-transition: all .4s ease 0s;
+      -webkit-transition: all .4s ease 0s;
+      transform-origin: center;
+  }
+  .scroll_top.active {
+      opacity: 1;
+      -webkit-transform: translateY(-25px) translateX(0);
+      transform: translateY(-25px) translateX(0);
+  }
+  view,
+  scroll-view,
+  swiper,
+  swiper-item,
+  cover-view,
+  cover-image,
+  icon,
+  text,
+  rich-text,
+  progress,
+  button,
+  checkbox,
+  form,
+  input,
+  label,
+  radio,
+  slider,
+  switch,
+  textarea,
+  navigator,
+  audio,
+  camera,
+  image,
+  video {
+  	box-sizing: border-box;
+  }
+  /* 骨架屏替代方案 */
+  .Skeleton {
+  	background: #f3f3f3;
+  	padding: 20rpx 0;
+  	border-radius: 8rpx;
+  }
+  
+  /* 图片载入替代方案 */
+  .image-wrapper {
+  	font-size: 0;
+  	background: #f3f3f3;
+  	border-radius: 4px;
+  
+  	image {
+  		width: 100%;
+  		height: 100%;
+  		transition: .6s;
+  		opacity: 0;
+  
+  		&.loaded {
+  			opacity: 1;
+  		}
+  	}
+  }
+  
+  .clamp {
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+  	white-space: nowrap;
+  	display: block;
+  }
+  
+  .common-hover {
+  	background: #f5f5f5;
+  }
+  
+  /*边框*/
+  .b-b:after,
+  .b-t:after {
+  	position: absolute;
+  	z-index: 3;
+  	left: 0;
+  	right: 0;
+  	height: 0;
+  	content: '';
+  	transform: scaleY(.5);
+  	border-bottom: 1px solid $border-color-base;
+  }
+  
+  .b-b:after {
+  	bottom: 0;
+  }
+  
+  .b-t:after {
+  	top: 0;
+  }
+  
+  /* button样式改写 */
+  uni-button,
+  button {
+  	// height: 80rpx;
+  	// line-height: 80rpx;
+  	font-size: $font-lg + 2rpx;
+  	font-weight: normal;
+    border: none;
+    outline: none;
+    &::after{
+      border: none
+    }
+  	&.no-border:before,
+  	&.no-border:after {
+  		border: 0;
+  	}
+  }
+  
+  uni-button[type=default],
+  button[type=default] {
+  	color: $font-color-dark;
+  }
+  
+  /* input 样式 */
+  .input-placeholder {
+  	color: #999999;
+  }
+  
+  .placeholder {
+  	color: #999999;
+  }
+  .draw_modal {
+    z-index: 7;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+  }

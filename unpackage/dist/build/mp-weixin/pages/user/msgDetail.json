@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "消息详情",
+  "usingComponents": {
+    "foot": "/pages/component/foot"
+  }
+}

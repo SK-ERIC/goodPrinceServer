@@ -1,0 +1,301 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+.overlay.data-v-377f4cb2 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 5;
+}
+.reply-input-modal.data-v-377f4cb2 {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 10rpx 0;
+  z-index: 6;
+  background-color: #FFFFFF;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+          align-items: flex-end;
+}
+.reply-input-modal .input-inner.data-v-377f4cb2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  background-color: #F3F3F3;
+  border-radius: 20rpx;
+  padding: 15rpx;
+  margin-left: 15rpx;
+}
+.reply-input-modal .input-inner .num_wrap.data-v-377f4cb2 {
+  text-align: right;
+  font-size: 20rpx;
+}
+.reply-input-modal .input-inner .num_wrap .num.data-v-377f4cb2 {
+  color: #ff0000;
+}
+.reply-input-modal .sendBtn.data-v-377f4cb2 {
+  border: none;
+  background-color: #FFFFFF;
+}
+.comment-list.data-v-377f4cb2 {
+  padding-top: 10rpx;
+}
+.comment-list .comment-cont.data-v-377f4cb2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  padding-bottom: 50rpx;
+  border-bottom: 2rpx solid #EFEFEF;
+}
+.comment-list .comment-cont.data-v-377f4cb2:last-child {
+  border-bottom: none;
+}
+.comment-list .comment-cont .info-wrap.data-v-377f4cb2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: start;
+  -webkit-justify-content: flex-start;
+          justify-content: flex-start;
+  padding-top: 27rpx;
+}
+.comment-list .comment-cont .info-wrap .info-inner-l image.data-v-377f4cb2 {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+.comment-list .comment-cont .info-wrap .info-inner-r.data-v-377f4cb2 {
+  margin-left: 22rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-justify-content: space-around;
+          justify-content: space-around;
+}
+.comment-list .comment-cont .info-wrap .info-inner-r .user.data-v-377f4cb2 {
+  font-size: 32rpx;
+  color: #222222;
+  font-weight: 500;
+}
+.comment-list .comment-cont .info-wrap .info-inner-r .date.data-v-377f4cb2 {
+  font-size: 24rpx;
+  color: #B1B1B1;
+  font-weight: 400;
+}
+.comment-list .comment-cont .comment-inner.data-v-377f4cb2 {
+  padding-left: 114rpx;
+}
+.comment-list .comment-cont .comment-inner .rate-wrap.data-v-377f4cb2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  margin: 45rpx 0 40rpx;
+}
+.comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-l.data-v-377f4cb2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+          align-items: baseline;
+}
+.comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-l .text.data-v-377f4cb2 {
+  color: #282828;
+  font-size: 24rpx;
+  font-weight: 500;
+  margin-right: 16rpx;
+}
+.comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r.data-v-377f4cb2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r .like-icon.data-v-377f4cb2 {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 5rpx;
+}
+.comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r .text.data-v-377f4cb2 {
+  font-size: 30rpx;
+  color: #B1B1B1;
+  font-weight: 400;
+}
+.comment-list .comment-cont .comment-inner .art.data-v-377f4cb2 {
+  font-size: 30rpx;
+  font-weight: 500;
+  color: #333333;
+}
+.comment-list .comment-cont .comment-inner .art.cut.data-v-377f4cb2 {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  word-break: break-all;
+  overflow: hidden;
+  white-space: normal;
+}
+.comment-list .comment-cont .comment-inner .fullText.data-v-377f4cb2 {
+  font-size: 30rpx;
+  color: #FF903A;
+  margin: 26rpx 0 14rpx;
+}
+.comment-list .comment-cont .comment-inner .img-list.data-v-377f4cb2 {
+  padding: 30rpx 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+.comment-list .comment-cont .comment-inner .img-list .img-cont.data-v-377f4cb2 {
+  margin-right: 18rpx;
+  margin-bottom: 18rpx;
+}
+.comment-list .comment-cont .comment-inner .img-list .img-cont.data-v-377f4cb2:nth-child(3n) {
+  margin-right: 0;
+}
+.comment-list .comment-cont .comment-inner .img-list .img-cont image.data-v-377f4cb2 {
+  width: 174rpx;
+  height: 174rpx;
+  border-radius: 14rpx;
+}
+.comment-list .comment-cont .comment-inner .reply-warp.data-v-377f4cb2 {
+  padding: 10rpx;
+  font-size: 24rpx;
+  color: #989897;
+  border-radius: 6rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.comment-list .comment-cont .comment-inner .reply-warp.reply-top.data-v-377f4cb2 {
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+          align-items: flex-start;
+  background-color: #F3F3F3;
+  border-radius: 6rpx;
+}
+.comment-list .comment-cont .comment-inner .reply-warp .reply.data-v-377f4cb2 {
+  color: #333333;
+  font-weight: 500;
+  word-break: keep-all;
+  display: inline;
+  margin-right: 10rpx;
+}
+.comment-list .comment-cont .comment-inner .reply-warp .wrap.data-v-377f4cb2 {
+  padding: 12rpx;
+  margin: 0 10rpx;
+  width: 60%;
+  background-color: #F3F3F4;
+}
+.comment-list .comment-cont .comment-inner .reply-warp .wrap .replyIpt.data-v-377f4cb2 {
+  line-height: 1.2;
+  color: #333333;
+  width: 100%;
+}
+.comment-list .comment-cont .comment-inner .reply-warp .holder.data-v-377f4cb2 {
+  color: #CACBD3;
+}
+.comment-list .comment-cont .comment-inner .reply-warp .reply-btn.data-v-377f4cb2 {
+  border: 1rpx solid #DFDFDF;
+  white-space: nowrap;
+  height: 50rpx;
+  font-size: 25rpx;
+  background-color: #F3F3F4;
+}
+.comment-list .nthing-section.data-v-377f4cb2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding-top: 230rpx;
+  padding-bottom: 130rpx;
+}
+.comment-list .nthing-section .nthing-img.data-v-377f4cb2 {
+  width: 220rpx;
+  height: 220rpx;
+}
+.comment-list .nthing-section .nthing-text.data-v-377f4cb2 {
+  margin: 40rpx 0 56rpx;
+  font-size: 30rpx;
+  color: #AFB0B5;
+}
+.comment-list .nthing-section .nthing-btn.data-v-377f4cb2 {
+  width: 480rpx;
+  height: 100rpx;
+  background-color: #FF544C;
+  border-radius: 50rpx;
+  color: #FFFFFF;
+  font-size: 32rpx;
+  text-align: center;
+  font-weight: 400;
+}
+

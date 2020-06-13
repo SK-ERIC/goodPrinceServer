@@ -1,0 +1,23 @@
+export const PH = {
+	reported:		'/pages/reported/reported',
+	building:		'/pages/building/building',
+	customer:		'/pages/customer/customer',
+	member:			'/pages/member/member',
+	companyapply:	'/pages/member/companyapply',
+	verify:			'/pages/member/verify',
+	notice:			'/pages/member/notice',
+	setting:		'/pages/member/setting',
+	editpwd:		'/pages/member/editpwd',
+	rule:			'/pages/member/rule',
+	valid:			'/pages/customer/valid',
+	customerDetail:	'/pages/customer/detail',
+	buildingDetail:	'/pages/building/detail',
+	choose_login:	'/pages/login/choose',
+	login:			'/pages/login/login',
+	buildingMap:	'/pages/building/map',
+	workerDesk:	'/pages/worker/desk',
+	workerReceive:	'/pages/worker/receive',
+	workerGive:		'/pages/worker/give',
+	loginBase:		'/pages/login/base',
+	billsReceiveCheck:	'/pages/bills/bills_receive_check'
+}

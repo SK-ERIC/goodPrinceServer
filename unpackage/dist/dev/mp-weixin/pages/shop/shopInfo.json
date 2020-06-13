@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "商家资料",
+  "usingComponents": {
+    "tui-datetime": "/components/tui-datetime/tui-datetime"
+  }
+}
