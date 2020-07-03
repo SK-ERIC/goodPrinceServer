@@ -232,6 +232,7 @@ var _default =
           uni.reLaunch({
             url: "/pages/shop/changeSuccess" });
 
+          uni.hideHomeButton();
         } else {
           _this.$common.errorToShow(res.msg);
         }

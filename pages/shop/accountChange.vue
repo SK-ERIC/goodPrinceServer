@@ -95,6 +95,7 @@
 						uni.reLaunch({
 							url: "/pages/shop/changeSuccess"
 						})
+						uni.hideHomeButton()
 					} else {
 						this.$common.errorToShow(res.msg);
 					}

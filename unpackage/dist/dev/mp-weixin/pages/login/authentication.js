@@ -431,6 +431,7 @@ var _default =
           uni.reLaunch({
             url: "/pages/login/shopAuth?shopId=".concat(_this4.shop_authentication_id) });
 
+          uni.hideHomeButton();
         } else {
           _this4.$common.errorToShow(res.msg);
         }

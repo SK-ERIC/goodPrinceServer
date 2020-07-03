@@ -98,6 +98,7 @@
 			}
 		},
 		onLoad() {
+			uni.hideHomeButton()
 			this.getFootConfig(); // 获取foot
 		},
 		onShow() {

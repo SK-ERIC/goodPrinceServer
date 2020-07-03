@@ -1,7 +1,7 @@
 <template>
 	<view class="container">
 		<view class="canvas-section">
-			<canvas canvas-id="myCanvas" :style="{ width: canvasW + 'px', height: canvasH + 'px' }" @click.top="previewImage"></canvas>
+			<canvas canvas-id="myCanvas" :style="{ width: canvasW + 'px', height: canvasH + 'px' }" @click.stop="previewImage"></canvas>
 		</view>
 
 		<view class="btn-section" v-if="finished">
@@ -140,16 +140,28 @@
 				})
 			},
 			saveImgToLocal: function(e) {
-
+				var tempFilePaths = _this.tempFilePath[0] 
+				if (!tempFilePaths) {
+					uni.showToast({
+						icon: "none",
+						title: "请重试!",
+						mask: true
+					})
+					return
+				}
 				uni.showActionSheet({
-					itemList: ['保存图片', '取消'],
+					itemList: ['保存图片'],
 					success: sheetRes => {
-						uni.saveFile({
-							tempFilePath: _this.tempFilePath[0],
-							success: function(saveRes) {
-								if (saveRes.errMsg == "saveFile:ok") {
+						uni.showLoading({
+							title: "保存中...",
+							mask: true
+						})
+						uni.downloadFile({
+							url: tempFilePaths,
+							success: (res) => {
+								if (res.errMsg == "downloadFile:ok") {
 									uni.saveImageToPhotosAlbum({
-										filePath: saveRes.savedFilePath,
+										filePath: res.tempFilePath,
 										success: function() {
 											uni.showToast({
 												title: "保存成功",
@@ -164,12 +176,46 @@
 										}
 									});
 								}
-
 							},
-							fail: function(saveErr) {
-								console.log("save", saveErr)
+							fail: (err) => {
+								uni.showToast({
+									icon: "none",
+									title: "请重试!",
+									mask: true
+								})
+							},
+							complete: () => {
+								// uni.hideLoading()
 							}
 						})
+
+						// uni.saveFile({
+						// 	tempFilePath: tempFilePaths,
+						// 	success: function(saveRes) {
+						// 		if (saveRes.errMsg == "saveFile:ok") {
+						// 			uni.saveImageToPhotosAlbum({
+						// 				filePath: saveRes.savedFilePath,
+						// 				success: function() {
+						// 					uni.showToast({
+						// 						title: "保存成功",
+						// 						icon: "success"
+						// 					});
+						// 				},
+						// 				fail: function() {
+						// 					uni.showToast({
+						// 						title: "保存失败",
+						// 						icon: "none"
+						// 					});
+						// 				}
+						// 			});
+						// 		}
+						// 	},
+						// 	fail: function(saveErr) {
+						// 		console.log("save", saveErr)
+						// 	}
+						// })
+
+
 					},
 					fail: sheetErr => {
 						console.log(sheetErr);
@@ -278,7 +324,42 @@
 					quality: 1,
 					complete: (res) => {
 						// console.log(res.tempFilePath);
-						this.tempFilePath.push(res.tempFilePath);
+						// this.tempFilePath.push(res.tempFilePath);
+
+						let userinfo = this.$db.get("userinfo") || "";
+						uni.uploadFile({
+							url: 'https://wxhyx.aisspc.cn/addons/qiniu/index/upload',
+							filePath: res.tempFilePath,
+							name: 'file',
+							fileType: 'image',
+							headers: {
+								'Accept': 'application/json',
+								'Content-Type': 'multipart/form-data',
+							},
+							formData: {
+								'method': 'images.upload',
+								'upfile': res.tempFilePath,
+								'token': userinfo.token
+							},
+							//formData:{},传递参数
+							success: (uploadFileRes) => {
+								// src="https://wxhyx-cdn.aisspc.cn/static/shopCenter_icon_b.png"
+								const backUpload = JSON.parse(uploadFileRes.data);
+								const url = `https://wxhyx-cdn.aisspc.cn${backUpload.data.url}`
+								this.tempFilePath.push(url);
+								console.log("上传图片", this.tempFilePath)
+								//自定义操作
+							},
+							complete() {
+								//console.log("this is headimg"+this.headimg)   
+							},
+							fail(e) {
+								console.log("this is errormes ")
+							}
+
+						});
+
+
 					}
 				}, this);
 			}

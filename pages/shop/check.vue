@@ -2,7 +2,7 @@
 	<view class="container skeleton">
 		<m-skeleton selector="skeleton" :show="showSkeleton"></m-skeleton>
 		<view class="check-section">
-			<image class="img skeleton-rect" :src="shopInfo.license_image" mode="" :data-src="shopInfo.license_image" @click="previewImage"></image>
+			<image class="img skeleton-rect" :src="shopInfo.license_image" mode="aspectFill" :data-src="shopInfo.license_image" @click="previewImage"></image>
 			<view class="text-inner skeleton-rect">
 				<view class="text-l">
 					公司名称
@@ -111,6 +111,7 @@
 						uni.reLaunch({
 							url: `/pages/login/status?status=${c}&succ=true`
 						})
+						uni.hideHomeButton()
 					} else {
 						let d = "";
 						if (c == 0) d = 1;

@@ -28,6 +28,7 @@ var _default =
 {
   data: function data() {
     return {
+      shopInfo: {},
       setList: [{
         id: 0,
         logo: "https://wxhyx-cdn.aisspc.cn/static/set_change.png",
@@ -46,8 +47,23 @@ var _default =
 
 
   },
+  onLoad: function onLoad() {
+    this.getShopAuthentication();
+  },
   methods: {
-    _switchSet: function _switchSet(item) {
+    getShopAuthentication: function getShopAuthentication() {var _this = this;
+      var shop_authentication_id = this.$db.get("shopId");
+      this.$http.getShopAuthentication({
+        shop_authentication_id: shop_authentication_id },
+      function (res) {
+        if (res.code == 1) {
+          _this.shopInfo = res.data;
+        } else {
+          _this.$common.errorToShow(res.msg);
+        }
+      });
+    },
+    _switchSet: function _switchSet(item) {var _this2 = this;
       switch (item.id) {
         case 0:
           uni.navigateTo({
@@ -55,8 +71,51 @@ var _default =
 
           break;
         case 1:
-          uni.navigateTo({
-            url: "/pages/shop/check" });
+          if (this.shopInfo.chagesub == 0) {
+            uni.navigateTo({
+              url: "/pages/shop/check" });
+
+          } else {
+            var a = this.shopInfo.status;
+            var c = "";
+            switch (a) {
+              case 0: // 未通过
+                c = 2;
+                break;
+              case 1: // 通过
+                c = 1;
+                break;
+              case 2: // 待审核
+                c = 0;
+                break;}
+
+            if (c == 1) {
+              // // 实名认证页无法返回变更实名页
+              // uni.reLaunch({
+              // 	url: `/pages/login/status?status=${c}&succ=true`
+              // })
+              // 改变chagesub字段为0
+              var shopId = this.$db.get("shopId");
+              this.$http.postSetChagesub({
+                shop_authentication_id: shopId },
+              function (res) {
+                if (res.code == 1) {
+                  uni.navigateTo({
+                    url: "/pages/shop/check" });
+
+                } else {
+                  _this2.$common.errorToShow(res.msg);
+                }
+              });
+
+            } else {
+              var d = "";
+              if (c == 0) d = 1;
+              uni.navigateTo({
+                url: "/pages/login/status?status=".concat(c, "&change=").concat(d) });
+
+            }
+          }
 
           break;
         case 2:

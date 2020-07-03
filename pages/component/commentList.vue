@@ -44,7 +44,7 @@
 					<view class="img-list">
 						<view class="img-cont" v-for="(img, ind) in item.image" :key="ind" :data-src="item.image[ind].image_url"
 						 @click.stop="previewImage(item.image, $event)">
-							<image :src="img.image_url" mode=""></image>
+							<image :src="img.image_url" mode="aspectFill"></image>
 						</view>
 					</view>
 					<!--  回复-->

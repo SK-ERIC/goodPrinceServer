@@ -38,6 +38,7 @@
 				uni.reLaunch({
 					url: "/pages/shop/shopCenter"
 				})
+				uni.hideHomeButton()
 			},
 		}
 	}

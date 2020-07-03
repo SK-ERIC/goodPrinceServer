@@ -472,6 +472,7 @@ var form = __webpack_require__(/*! @/components/tui-validation/tui-validation.js
           uni.reLaunch({
             url: '/pages/shop/shopCenter' });
 
+          uni.hideHomeButton();
         } else {
           _this2.$common.errorToShow(res.msg);
         }
@@ -486,7 +487,7 @@ var form = __webpack_require__(/*! @/components/tui-validation/tui-validation.js
 
     },
     chooseImage: function chooseImage(v) {var _this3 = this;
-      this.$http.uploadImage(1, function (res, tem) {
+      this.$http.uploadImage(6, function (res, tem) {
         switch (v) {
           // 店铺照片上传
           case "shop":

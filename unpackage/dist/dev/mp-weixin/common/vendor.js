@@ -757,7 +757,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -5957,7 +5957,7 @@ GlobalOption;exports.default = _default;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.postIsRead = exports.changemobile = exports.getShopAuthentication = exports.getErCode = exports.setShopReply = exports.getFootConfig = exports.getFootInfo = exports.getShopReplyContent = exports.delimages = exports.updateShopInfo = exports.ShopReply = exports.postShopCommentsList = exports.postShopCore = exports.postShopFirst = exports.postSaveShopUser = exports.postMobilelogin = exports.postSendCode = exports.wxLogin = exports.uploadImage = exports.domain = void 0;var common = _interopRequireWildcard(__webpack_require__(/*! ./common.js */ 18));
+/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.postSetChagesub = exports.postIsRead = exports.changemobile = exports.getShopAuthentication = exports.getErCode = exports.setShopReply = exports.getFootConfig = exports.getFootInfo = exports.getShopReplyContent = exports.delimages = exports.updateShopInfo = exports.ShopReply = exports.postShopCommentsList = exports.postShopCore = exports.postShopFirst = exports.postSaveShopUser = exports.postMobilelogin = exports.postSendCode = exports.wxLogin = exports.uploadImage = exports.domain = void 0;var common = _interopRequireWildcard(__webpack_require__(/*! ./common.js */ 18));
 var db = _interopRequireWildcard(__webpack_require__(/*! ./db.js */ 19));function _getRequireWildcardCache() {if (typeof WeakMap !== "function") return null;var cache = new WeakMap();_getRequireWildcardCache = function _getRequireWildcardCache() {return cache;};return cache;}function _interopRequireWildcard(obj) {if (obj && obj.__esModule) {return obj;}if (obj === null || typeof obj !== "object" && typeof obj !== "function") {return { default: obj };}var cache = _getRequireWildcardCache();if (cache && cache.has(obj)) {return cache.get(obj);}var newObj = {};var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;for (var key in obj) {if (Object.prototype.hasOwnProperty.call(obj, key)) {var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;if (desc && (desc.get || desc.set)) {Object.defineProperty(newObj, key, desc);} else {newObj[key] = obj[key];}}}newObj.default = obj;if (cache) {cache.set(obj, newObj);}return newObj;} //引入common
 //引入db
 var domain = 'https://wxhyx.aisspc.cn';exports.domain = domain;
@@ -6225,7 +6225,9 @@ exports.getErCode = getErCode;var getShopAuthentication = function getShopAuthen
 // 变更手机号
 exports.getShopAuthentication = getShopAuthentication;var changemobile = function changemobile(data, callback) {return post("Shop_Authentication/changemobile", data, callback);};
 // 用户中心那个new
-exports.changemobile = changemobile;var postIsRead = function postIsRead(data, callback) {return post("Shop_authentication/isRead", data, callback);};exports.postIsRead = postIsRead;
+exports.changemobile = changemobile;var postIsRead = function postIsRead(data, callback) {return post("Shop_authentication/isRead", data, callback);};
+// 變更改狀態
+exports.postIsRead = postIsRead;var postSetChagesub = function postSetChagesub(data, callback) {return post("Shop_Authentication/setChagesub", data, callback);};exports.postSetChagesub = postSetChagesub;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ }),
@@ -12159,7 +12161,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -12180,14 +12182,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -12263,7 +12265,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));

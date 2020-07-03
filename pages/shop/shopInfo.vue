@@ -336,6 +336,7 @@
 						uni.reLaunch({
 							url:'/pages/shop/shopCenter'
 						})
+						uni.hideHomeButton()
 					} else {
 						this.$common.errorToShow(res.msg);
 					}
@@ -350,7 +351,7 @@
 				})
 			},
 			chooseImage(v) {
-				this.$http.uploadImage(1, (res, tem)=> {
+				this.$http.uploadImage(6, (res, tem)=> {
 					switch (v){
 						// 店铺照片上传
 						case "shop":

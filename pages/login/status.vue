@@ -47,6 +47,7 @@
 		},
 		onLoad(options) {
 			const status = options.status;
+			console.log("status", status)
 			status == 0 ? this.info = this.infoA : status == 1 ? this.info = this.infoB : this.info = this.infoC;
 			if (options.change) this.change = options.change
 			console.log("options.change", options.change)
@@ -54,6 +55,7 @@
 		},
 		methods: {
 			switchBtn(status) {
+				console.log("status", status)
 				const shopId = this.$db.get("shopId")
 				switch (status) {
 					case 1: // 已通过
@@ -64,6 +66,7 @@
 								uni.reLaunch({
 									url: "/pages/shop/shopCenter"
 								})
+								uni.hideHomeButton()
 							} else {
 								this.$common.errorToShow(res.msg);
 							}

@@ -243,6 +243,7 @@ __webpack_require__.r(__webpack_exports__);
           uni.reLaunch({
             url: "/pages/login/status?status=".concat(c, "&succ=true") });
 
+          uni.hideHomeButton();
         } else {
           var d = "";
           if (c == 0) d = 1;

@@ -292,6 +292,7 @@ var WxAuth = __webpack_require__(/*! @/config/WxAuth */ 27);var _default =
               uni.reLaunch({
                 url: "/pages/shop/shopCenter" });
 
+              uni.hideHomeButton();
             } else {
               var c = null;
               switch (b) {

@@ -294,6 +294,7 @@
 						uni.reLaunch({
 							url: `/pages/login/shopAuth?shopId=${this.shop_authentication_id}`
 						})
+						uni.hideHomeButton()
 					} else {
 						this.$common.errorToShow(res.msg);
 					}

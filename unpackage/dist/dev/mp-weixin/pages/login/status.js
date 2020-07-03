@@ -179,6 +179,7 @@ var _default =
   },
   onLoad: function onLoad(options) {
     var status = options.status;
+    console.log("status", status);
     status == 0 ? this.info = this.infoA : status == 1 ? this.info = this.infoB : this.info = this.infoC;
     if (options.change) this.change = options.change;
     console.log("options.change", options.change);
@@ -186,6 +187,7 @@ var _default =
   },
   methods: {
     switchBtn: function switchBtn(status) {var _this = this;
+      console.log("status", status);
       var shopId = this.$db.get("shopId");
       switch (status) {
         case 1: // 已通过
@@ -196,6 +198,7 @@ var _default =
               uni.reLaunch({
                 url: "/pages/shop/shopCenter" });
 
+              uni.hideHomeButton();
             } else {
               _this.$common.errorToShow(res.msg);
             }

@@ -155,6 +155,7 @@
 								uni.reLaunch({
 									url: "/pages/shop/shopCenter"
 								})
+								uni.hideHomeButton()
 							} else {
 								let c = null;
 								switch (b) {

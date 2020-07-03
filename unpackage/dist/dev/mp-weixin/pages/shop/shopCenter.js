@@ -234,6 +234,7 @@ __webpack_require__.r(__webpack_exports__);
 
   },
   onLoad: function onLoad() {
+    uni.hideHomeButton();
     this.getFootConfig(); // 获取foot
   },
   onShow: function onShow() {

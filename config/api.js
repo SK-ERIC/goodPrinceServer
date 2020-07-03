@@ -267,6 +267,8 @@ export const getShopAuthentication = (data, callback) => post("Shop_Authenticati
 export const changemobile = (data, callback) => post("Shop_Authentication/changemobile", data, callback)
 // 用户中心那个new
 export const postIsRead = (data, callback) => post("Shop_authentication/isRead", data, callback)
+// 變更改狀態
+export const postSetChagesub = (data, callback) => post("Shop_Authentication/setChagesub", data, callback)
 
 
 
