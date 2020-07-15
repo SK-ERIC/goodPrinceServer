@@ -5,9 +5,26 @@
 	},
 	"setting": {
 		"urlCheck": false,
-		"minified": false,
 		"es6": false,
-		"postcss": true
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": false,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.9.2",
@@ -39,6 +56,13 @@
 		"miniprogram": {
 			"current": -1,
 			"list": [
+				{
+					"id": -1,
+					"name": "pages/login/authentication",
+					"pathName": "pages/login/authentication",
+					"query": "",
+					"scene": null
+				},
 				{
 					"id": -1,
 					"name": "pages/shop/shopCenter",

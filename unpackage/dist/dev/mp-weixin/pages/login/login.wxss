@@ -38,7 +38,7 @@
   -webkit-align-items: center;
           align-items: center;
   margin: 0 auto;
-  width: 630rpx;
+  width: 631rpx;
   height: 93rpx;
   border: 1rpx solid #5E6377;
   border-radius: 14rpx;
@@ -59,7 +59,7 @@
   -webkit-flex: .25;
           flex: .25;
   white-space: nowrap;
-  text-indent: 30rpx;
+  margin-left: 30rpx;
 }
 .container .server-section .item-r.data-v-9b0c1b42 {
   -webkit-box-flex: .75;

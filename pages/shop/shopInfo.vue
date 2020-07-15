@@ -106,10 +106,10 @@
 							</view>
 						</view>
 					</view>
-					<!-- 卫生经营许可证 -->
+					<!-- 许可证 -->
 					<view class="upload-section">
 						<view class="title">
-							卫生经营许可证上传
+							许可证上传
 						</view>
 						<view class="upload-wrap">
 							<view class="upload-inner" 
@@ -351,7 +351,7 @@
 				})
 			},
 			chooseImage(v) {
-				this.$http.uploadImage(6, (res, tem)=> {
+				this.$http.uploadImage(1, (res, tem)=> {
 					switch (v){
 						// 店铺照片上传
 						case "shop":
@@ -419,11 +419,7 @@
 									this.heaImgList.splice(i, 1);
 									if(this.heaFilePath[i]) this.heaFilePath.splice(i, 1)
 								break
-							}
-							
-							
-							
-							
+							}		
 						}
 					}
 				})

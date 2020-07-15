@@ -134,6 +134,9 @@
   color: #363636;
   margin-bottom: 33rpx;
 }
+.container .auth-section .steps-two .upload-title.shop-image.data-v-195505f2 {
+  margin-top: 30rpx;
+}
 .container .auth-section .steps-two .upload-section.data-v-195505f2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -156,8 +159,8 @@
           align-items: center;
 }
 .container .auth-section .steps-two .upload-section .img-section .img.data-v-195505f2 {
-  width: 440rpx;
-  height: 360rpx;
+  width: 220rpx;
+  height: 160rpx;
   margin: 0 auto 24rpx;
 }
 .container .auth-section .steps-two .upload-section .img-section .cuIcon-roundclosefill.data-v-195505f2 {
@@ -174,6 +177,7 @@
   color: #989EAC;
   font-size: 24rpx;
   line-height: 40rpx;
+  margin-top: 20rpx;
 }
 .container .auth-section .steps-two .upload-section .tip-wrap .tip-l.data-v-195505f2 {
   margin-right: 10rpx;
@@ -206,6 +210,13 @@
 .container .auth-section .steps-three .btn-section.data-v-195505f2 {
   margin-top: 60rpx;
 }
+.container .auth-section .input-tip.data-v-195505f2 {
+  color: #CAC8C8;
+  margin: 10rpx 0 40rpx 120rpx;
+}
+.container .auth-section .input-tip .red.data-v-195505f2 {
+  color: red;
+}
 .container .auth-section .input-section.data-v-195505f2 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -215,14 +226,16 @@
           align-items: center;
   width: 560rpx;
   height: 93rpx;
-  background-color: #F8F8F8;
   border-radius: 14rpx;
-  margin: 0 auto 40rpx;
+  margin: 0 auto;
+}
+.container .auth-section .input-section.input-margin.data-v-195505f2 {
+  margin-bottom: 40rpx;
 }
 .container .auth-section .input-section .input-item-l.data-v-195505f2 {
   margin-left: 30rpx;
   font-size: 30rpx;
-  color: #363636;
+  color: #000000;
   font-weight: 500;
   white-space: nowrap;
 }
@@ -230,7 +243,9 @@
   width: 150rpx;
 }
 .container .auth-section .input-section .input-item-r.data-v-195505f2 {
-  margin: 0 20rpx;
+  padding: 0 20rpx;
+  margin-left: 20rpx;
+  background-color: #F8F8F8;
 }
 .container .auth-section .input-section .input-item-r input.data-v-195505f2 {
   height: 93rpx;

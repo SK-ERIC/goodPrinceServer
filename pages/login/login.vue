@@ -285,7 +285,8 @@
 		.server-section {
 			@include flexX;
 			margin: 0 auto;
-			width: 630rpx;
+			// width: 630rpx;
+			width: 315.5*2rpx;
 			height: 93rpx;
 			border: 1rpx solid #5E6377;
 			border-radius: 14rpx;
@@ -306,7 +307,8 @@
 				font-weight: 800;
 				flex: .25;
 				white-space: nowrap;
-				text-indent: 30rpx;
+				// text-indent: 30rpx;
+				margin-left: 30rpx;
 			}
 
 			.item-r {

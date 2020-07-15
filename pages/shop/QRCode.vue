@@ -53,6 +53,9 @@
 				tempFilePath: [], // 海报
 				finished: false,
 				openSettingBtnHidden: true, //是否授权
+				canvasToImageFileError: 1, // 绘制最终展示海报时的错误次数
+				canvasToImageFileDelayTime: 200, // 绘制最终展示海报时的延时
+				canvasToImageFileQuality: 1, // 绘制最终展示海报时的画质
 			}
 		},
 		onLoad() {
@@ -83,7 +86,7 @@
 						}).catch(error => {
 							console.warn(error)
 						})
-
+						
 					_this.OnCanvas();
 				})
 			},
@@ -130,7 +133,10 @@
 								},
 								fail() { //这里是用户拒绝授权后的回调
 									_this.openSettingBtnHidden = false;
-									console.log("相册授权失败")
+									uni.showToast({
+										icon: "none",
+										title: "相册授权失败,请重试!"
+									})
 								}
 							})
 						} else { //用户已经授权过了
@@ -140,7 +146,7 @@
 				})
 			},
 			saveImgToLocal: function(e) {
-				var tempFilePaths = _this.tempFilePath[0] 
+				var tempFilePaths = _this.tempFilePath[0]
 				if (!tempFilePaths) {
 					uni.showToast({
 						icon: "none",
@@ -300,7 +306,7 @@
 						uni.hideLoading()
 						_this.finished = true;
 					});
-				}, 10);
+				}, _this.canvasToImageFileDelayTime);
 
 			},
 			async getImageInfo({
@@ -319,12 +325,37 @@
 				});
 			},
 			getNewImage() {
+				const _this = this
 				uni.canvasToTempFilePath({
 					canvasId: "myCanvas",
-					quality: 1,
+					quality: _this.canvasToImageFileQuality,
+					fail: (error) => {
+						const {
+							errMsg
+						} = error
+						// 可能会有其他报错，还是拦截一下吧
+						if (errMsg === 'canvasToTempFilePath:fail:create bitmap failed') {
+							// 一次不行再试一遍 5次都不过就放弃吧
+							if (_this.canvasToImageFileError <= 5) {
+								// 错误次数+1
+								_this.getNewImageCount += 1;
+								// 延迟+100
+								_this.canvasToImageFileDelayTime += 100;
+								// 画质减去0.1
+								_this.canvasToImageFileQuality -= 0.1;
+								_this.getNewImage()
+							} else {
+								// 错了这么多遍基本没救了
+								console.error('[canvasToImageFile]×生成海报失败，尝试次数:' + _this.canvasToImageFileError + ',延迟:' +
+									_this.canvasToImageFileDelayTime + ',画质:' + _this.canvasToImageFileQuality, e);
+							}
+						}
+					},
 					complete: (res) => {
 						// console.log(res.tempFilePath);
 						// this.tempFilePath.push(res.tempFilePath);
+
+						console.log("res.tempFilePath", res)
 
 						let userinfo = this.$db.get("userinfo") || "";
 						uni.uploadFile({

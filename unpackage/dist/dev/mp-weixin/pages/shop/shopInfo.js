@@ -487,7 +487,7 @@ var form = __webpack_require__(/*! @/components/tui-validation/tui-validation.js
 
     },
     chooseImage: function chooseImage(v) {var _this3 = this;
-      this.$http.uploadImage(6, function (res, tem) {
+      this.$http.uploadImage(1, function (res, tem) {
         switch (v) {
           // 店铺照片上传
           case "shop":
@@ -555,10 +555,6 @@ var form = __webpack_require__(/*! @/components/tui-validation/tui-validation.js
                 _this4.heaImgList.splice(i, 1);
                 if (_this4.heaFilePath[i]) _this4.heaFilePath.splice(i, 1);
                 break;}
-
-
-
-
 
           }
         } });

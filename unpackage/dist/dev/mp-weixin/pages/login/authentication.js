@@ -265,6 +265,42 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -278,8 +314,12 @@ var _default =
         businessName: "", // 商家全称
         legalPerson: "" // 法人姓名
       },
-      tempFilePaths: [],
-      BusinessLicense: [], // 营业执照
+      stepsTwo: {
+        tempFilePathsA: [],
+        BusinessLicenseA: [], // 营业执照
+        tempFilePathsB: [],
+        BusinessLicenseB: [] // 店招照片
+      },
       stepsThree: {
         userName: "", // 真实姓名
         IDCard: "", // 身份证号码
@@ -298,7 +338,6 @@ var _default =
 
   },
   onLoad: function onLoad(options) {
-    console.log("options", options);
     if (options.steps) this.activeSteps = options.steps;
     if (options.shopId) this.shop_authentication_id = options.shopId;
     if (this.$db.get("shopId")) this.shop_authentication_id = this.$db.get("shopId");
@@ -315,10 +354,16 @@ var _default =
       },
       deep: true },
 
-    BusinessLicense: {
-      handler: function handler(newValue) {
-        this.disabledTwo = !!newValue;
-      } },
+    // 监听第二步
+    stepsTwo: {
+      handler: function handler(newVal) {
+        if (newVal.BusinessLicenseA.length != 0 && newVal.BusinessLicenseB.length != 0) {
+          this.disabledTwo = true;
+        } else {
+          this.disabledTwo = false;
+        }
+      },
+      deep: true },
 
     // 监听第三步
     stepsThree: {
@@ -345,14 +390,19 @@ var _default =
 
       }
     },
-    chooseImage: function chooseImage() {var _this = this;
-      this.$http.uploadImage(1, function (res, tem) {var _this$BusinessLicense;
-        (_this$BusinessLicense = _this.BusinessLicense).push.apply(_this$BusinessLicense, _toConsumableArray(tem));
-        _this.tempFilePaths.push(res.data.url);
+    chooseImage: function chooseImage() {var _this = this;var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'A';
+      this.$http.uploadImage(1, function (res, tem) {
+        if (a === 'A') {var _this$stepsTwo$Busine;
+          (_this$stepsTwo$Busine = _this.stepsTwo.BusinessLicenseA).push.apply(_this$stepsTwo$Busine, _toConsumableArray(tem));
+          _this.stepsTwo.tempFilePathsA.push(res.data.url);
+        } else if (a === 'B') {var _this$stepsTwo$Busine2;
+          (_this$stepsTwo$Busine2 = _this.stepsTwo.BusinessLicenseB).push.apply(_this$stepsTwo$Busine2, _toConsumableArray(tem));
+          _this.stepsTwo.tempFilePathsB.push(res.data.url);
+        }
       });
     },
     // 删除图片
-    delImage: function delImage(e) {var _this2 = this;
+    delImage: function delImage() {var _this2 = this;var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'A';var e = arguments.length > 1 ? arguments[1] : undefined;
       uni.showModal({
         title: '删除照片',
         content: '确定要删除这张照片吗？',
@@ -360,16 +410,27 @@ var _default =
         confirmText: '确定',
         success: function success(res) {
           if (res.confirm) {
-            _this2.BusinessLicense = [];
-            _this2.tempFilePaths = [];
+            if (a === "A") {
+              _this2.stepsTwo.BusinessLicenseA = [];
+              _this2.stepsTwo.tempFilePathsA = [];
+            } else if (a === 'B') {
+              _this2.stepsTwo.BusinessLicenseB = [];
+              _this2.stepsTwo.tempFilePathsB = [];
+            }
           }
         } });
 
     },
     // 预览
-    previewImage: function previewImage(e) {
+    previewImage: function previewImage() {var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "A";var e = arguments.length > 1 ? arguments[1] : undefined;
+      var urls = "";
+      if (a === "A") {
+        urls = this.stepsTwo.BusinessLicenseA;
+      } else if (a === "B") {
+        urls = this.stepsTwo.BusinessLicenseB;
+      }
       uni.previewImage({
-        urls: this.tempFilePaths,
+        urls: urls,
         current: e.currentTarget.dataset.src });
 
     },
@@ -415,13 +476,15 @@ var _default =
     },
     submit: function submit() {var _this4 = this;
       var shop_id = this.$db.get("shop_id") || "";
+
       this.$http.postSaveShopUser({
         shop_id: shop_id, // 店铺id
         shop_authentication_id: this.shop_authentication_id, // 商家id
         shop_title: this.stepsOne.shopName, // 店铺名称
         shop_name_full: this.stepsOne.businessName, // 商家全称
         legalname: this.stepsOne.legalPerson, // 法人
-        license_image: this.tempFilePaths[0], // 营业执照
+        license_image: this.stepsTwo.tempFilePathsA[0], // 营业执照
+        shop_image_first: this.stepsTwo.tempFilePathsB[0], // 店招图片
         mobile: this.stepsThree.phone, // 手机号
         username: this.stepsThree.userName, // 办证人
         card: this.stepsThree.IDCard, // 身份证

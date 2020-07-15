@@ -17,12 +17,16 @@
 			<view class="steps-one" v-if="activeSteps==1">
 				<view class="input-section">
 					<view class="input-item-l">
-						店铺名称
+						店招名称
 					</view>
 					<view class="input-item-r">
-						<input type="text" focus v-model.trim="stepsOne.shopName" maxlength="20" placeholder="请输入店铺名称..."
+						<input type="text" focus v-model.trim="stepsOne.shopName" maxlength="20" placeholder="请输入店招名称..."
 						 placeholder-class="holder" />
 					</view>
+				</view>
+				<view class="input-tip">
+					<text class="red">*</text>
+					注：店铺招牌的名称，如“小王馄饨店”。
 				</view>
 				<view class="input-section">
 					<view class="input-item-l">
@@ -32,6 +36,10 @@
 						<input type="text" v-model.trim="stepsOne.businessName" maxlength="25" placeholder="请输入商家全称..." placeholder-class="holder" />
 					</view>
 				</view>
+				<view class="input-tip">
+					<text class="red">*</text>
+					注：营业执照上的商家名称全称。
+				</view>
 				<view class="input-section">
 					<view class="input-item-l">
 						法人姓名
@@ -40,10 +48,14 @@
 						<input type="text" v-model.trim="stepsOne.legalPerson" maxlength="20" placeholder="请输入法人姓名..." placeholder-class="holder" />
 					</view>
 				</view>
-				<view class="tip-section text-center">
+				<view class="input-tip">
+					<text class="red">*</text>
+					注：营业执照上的法定代表人/负责人姓名。
+				</view>
+				<!-- <view class="tip-section text-center">
 					<text class="red">*</text>
 					注：请填写营业执照上的公司全称及法人姓名
-				</view>
+				</view> -->
 
 				<view class="btn-section">
 					<button type="default" :disabled="!disabledOne" class="cu-btn next-steps" @click="nextSteps">下一步</button>
@@ -56,9 +68,31 @@
 				</view>
 				<view class="upload-section">
 					<view class="img-section">
-						<image v-if="!BusinessLicense[0]" class="img" src="https://wxhyx-cdn.aisspc.cn/static/upload.png" @tap="chooseImage"></image>
-						<image v-else class="img" :src="BusinessLicense[0]" mode="" :data-src="BusinessLicense[0]" @click="previewImage"></image>
-						<text v-if="BusinessLicense[0]" class="cuIcon-roundclosefill" @tap.stop="delImage"></text>
+						<image v-if="!stepsTwo.BusinessLicenseA[0]" class="img" src="https://wxhyx-cdn.aisspc.cn/static/upload.png" @tap="chooseImage('A')"></image>
+						<image v-else class="img" :src="stepsTwo.BusinessLicenseA[0]" mode="aspectFill" :data-src="stepsTwo.BusinessLicenseA[0]" @click="previewImage('A', $event)"></image>
+						<text v-if="stepsTwo.BusinessLicenseA[0]" class="cuIcon-roundclosefill" @tap.stop="delImage('A', $event)"></text>
+					</view>
+					<!-- <view class="tip-wrap">
+						<view class="tip-l">
+							<text class="red">*</text>
+							注:
+						</view>
+						<view class="tip-r">
+							<text>①可以上传JPG、PNG、GIF格式的图片</text>
+							<text>②可以使用电子扫描件、照片（清晰）</text>
+							<text>③图片大小不得大于5M</text>
+						</view>
+					</view> -->
+				</view>
+				
+				<view class="upload-title text-center shop-image">
+					请上传1张店铺的正门带店招的照片
+				</view>
+				<view class="upload-section">
+					<view class="img-section">
+						<image v-if="!stepsTwo.BusinessLicenseB[0]" class="img" src="https://wxhyx-cdn.aisspc.cn/static/upload_img.png" @tap="chooseImage('B')"></image>
+						<image v-else class="img" :src="stepsTwo.BusinessLicenseB[0]" mode="aspectFill" :data-src="stepsTwo.BusinessLicenseB[0]" @click="previewImage('B', $event)"></image>
+						<text v-if="stepsTwo.BusinessLicenseB[0]" class="cuIcon-roundclosefill" @tap.stop="delImage('B', $event)"></text>
 					</view>
 					<view class="tip-wrap">
 						<view class="tip-l">
@@ -72,6 +106,8 @@
 						</view>
 					</view>
 				</view>
+				
+				
 				<view class="btn-section">
 					<button type="default" :disabled="!disabledTwo" class="cu-btn next-steps" @click="nextSteps">下一步</button>
 				</view>
@@ -81,7 +117,7 @@
 				<view class="input-title text-center">
 					办理人信息录入
 				</view>
-				<view class="input-section">
+				<view class="input-section input-margin">
 					<view class="input-item-l type-three">
 						真实姓名
 					</view>
@@ -90,7 +126,7 @@
 						 placeholder-class="holder" />
 					</view>
 				</view>
-				<view class="input-section">
+				<view class="input-section input-margin">
 					<view class="input-item-l type-three">
 						身份证号码
 					</view>
@@ -99,7 +135,7 @@
 						 placeholder-class="holder" @blur="idBlur" />
 					</view>
 				</view>
-				<view class="input-section">
+				<view class="input-section input-margin">
 					<view class="input-item-l type-three">
 						手机号码
 					</view>
@@ -108,7 +144,7 @@
 						 placeholder-class="holder" />
 					</view>
 				</view>
-				<view class="input-section">
+				<view class="input-section input-margin">
 					<view class="input-item-l type-three">
 						输入验证码
 					</view>
@@ -141,8 +177,12 @@
 					businessName: "", // 商家全称
 					legalPerson: "", // 法人姓名
 				},
-				tempFilePaths: [],
-				BusinessLicense: [], // 营业执照
+				stepsTwo: {
+					tempFilePathsA: [],
+					BusinessLicenseA: [], // 营业执照
+					tempFilePathsB: [],
+					BusinessLicenseB: [], // 店招照片
+				},
 				stepsThree: {
 					userName: "", // 真实姓名
 					IDCard: "", // 身份证号码
@@ -161,7 +201,6 @@
 			}
 		},
 		onLoad(options) {
-			console.log("options", options)
 			if (options.steps) this.activeSteps = options.steps;
 			if (options.shopId) this.shop_authentication_id = options.shopId;
 			if (this.$db.get("shopId")) this.shop_authentication_id = this.$db.get("shopId");
@@ -178,10 +217,16 @@
 				},
 				deep: true
 			},
-			BusinessLicense: {
-				handler(newValue) {
-					this.disabledTwo = !!newValue
-				}
+			// 监听第二步
+			stepsTwo: {
+				handler (newVal) {
+					if (newVal.BusinessLicenseA.length != 0 && newVal.BusinessLicenseB.length != 0) {
+						this.disabledTwo = true
+					} else {
+						this.disabledTwo = false
+					}
+				},
+				deep: true
 			},
 			// 监听第三步
 			stepsThree: {
@@ -208,14 +253,19 @@
 					})
 				}
 			},
-			chooseImage() {
+			chooseImage(a='A') {
 				this.$http.uploadImage(1, (res, tem) => {
-					this.BusinessLicense.push(...tem);
-					this.tempFilePaths.push(res.data.url);
+					if (a === 'A') {
+						this.stepsTwo.BusinessLicenseA.push(...tem);
+						this.stepsTwo.tempFilePathsA.push(res.data.url);
+					} else if (a === 'B') {
+						this.stepsTwo.BusinessLicenseB.push(...tem);
+						this.stepsTwo.tempFilePathsB.push(res.data.url);
+					}
 				})
 			},
 			// 删除图片
-			delImage(e) {
+			delImage(a='A', e) {
 				uni.showModal({
 					title: '删除照片',
 					content: '确定要删除这张照片吗？',
@@ -223,16 +273,27 @@
 					confirmText: '确定',
 					success: res => {
 						if (res.confirm) {
-							this.BusinessLicense = []
-							this.tempFilePaths = []
+							if (a === "A") {
+								this.stepsTwo.BusinessLicenseA = []
+								this.stepsTwo.tempFilePathsA = []
+							} else if (a === 'B') {
+								this.stepsTwo.BusinessLicenseB = []
+								this.stepsTwo.tempFilePathsB = []
+							}	
 						}
 					}
 				})
 			},
 			// 预览
-			previewImage(e) {
+			previewImage(a="A", e) {
+				let urls = "";
+				if (a === "A") {
+					urls = this.stepsTwo.BusinessLicenseA
+				} else if ( a === "B") {
+					urls = this.stepsTwo.BusinessLicenseB
+				}
 				uni.previewImage({
-					urls: this.tempFilePaths,
+					urls,
 					current: e.currentTarget.dataset.src
 				})
 			},
@@ -278,13 +339,15 @@
 			},
 			submit() {
 				const shop_id = this.$db.get("shop_id") || "";
+				
 				this.$http.postSaveShopUser({
 					shop_id, // 店铺id
 					shop_authentication_id: this.shop_authentication_id, // 商家id
 					shop_title: this.stepsOne.shopName, // 店铺名称
 					shop_name_full: this.stepsOne.businessName, // 商家全称
 					legalname: this.stepsOne.legalPerson, // 法人
-					license_image: this.tempFilePaths[0], // 营业执照
+					license_image: this.stepsTwo.tempFilePathsA[0], // 营业执照
+					shop_image_first: this.stepsTwo.tempFilePathsB[0], // 店招图片
 					mobile: this.stepsThree.phone, // 手机号
 					username: this.stepsThree.userName, // 办证人
 					card: this.stepsThree.IDCard, // 身份证
@@ -401,6 +464,9 @@
 				padding-top: 86rpx;
 
 				.upload-title {
+					&.shop-image{
+						margin-top: 30rpx;
+					}
 					font-size: 34rpx;
 					font-weight: 500;
 					color: #363636;
@@ -416,8 +482,10 @@
 						@include flexX;
 
 						.img {
-							width: 440rpx;
-							height: 360rpx;
+							// width: 440rpx;
+							// height: 360rpx;
+							width: 220rpx;
+							height: 160rpx;
 							margin: 0 auto 24rpx;
 						}
 
@@ -436,6 +504,7 @@
 						color: #989EAC;
 						font-size: 24rpx;
 						line-height: 40rpx;
+						margin-top: 20rpx;
 
 						.tip-l {
 							.red {
@@ -473,18 +542,29 @@
 				}
 			}
 
+			.input-tip{
+				color: #CAC8C8;
+				margin: 10rpx 0 40rpx 120rpx;
+				.red{
+					color: red;
+				}
+			}
 			.input-section {
+				&.input-margin{
+					 margin-bottom: 40rpx;
+				}
 				@include flexX;
 				width: 560rpx;
 				height: 93rpx;
-				background-color: #F8F8F8;
+				// background-color: #F8F8F8;
 				border-radius: 14rpx;
-				margin: 0 auto 40rpx;
+				margin: 0 auto;
 
 				.input-item-l {
 					margin-left: 30rpx;
 					font-size: 30rpx;
-					color: #363636;
+					color: #000000;
+					// color: #363636;
 					font-weight: 500;
 					white-space: nowrap;
 
@@ -494,7 +574,9 @@
 				}
 
 				.input-item-r {
-					margin: 0 20rpx;
+					padding: 0 20rpx;
+					margin-left: 20rpx;
+					background-color: #F8F8F8;
 
 					input {
 						height: 93rpx;
