@@ -24,19 +24,19 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container.data-v-2659e803 {
+.container.data-v-1ac44d7e {
   min-height: 100vh;
   background-image: url("https://wxhyx-cdn.aisspc.cn/static/cavas_bg.png");
   background-size: 100% 100%;
   padding-bottom: 80rpx;
 }
-.code_wrap.data-v-2659e803 {
+.code_wrap.data-v-1ac44d7e {
   opacity: 0;
 }
-.canvas-section.data-v-2659e803 {
+.canvas-section.data-v-1ac44d7e {
   padding: 80rpx 44rpx 0;
 }
-.btn-section.data-v-2659e803 {
+.btn-section.data-v-1ac44d7e {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -48,7 +48,7 @@
           justify-content: center;
   margin-top: 50rpx;
 }
-.btn-section .download-btn.data-v-2659e803 {
+.btn-section .download-btn.data-v-1ac44d7e {
   width: 480rpx;
   height: 100rpx;
   background-color: #FF544C;

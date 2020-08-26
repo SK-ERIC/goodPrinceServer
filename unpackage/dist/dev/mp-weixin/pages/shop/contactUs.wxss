@@ -24,23 +24,23 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container .head.data-v-168f1c99 {
+.container .head.data-v-0006813e {
   background-color: #A01613;
 }
-.container .head image.data-v-168f1c99 {
+.container .head image.data-v-0006813e {
   width: 100%;
   height: 556rpx;
 }
-.container .foot-section.data-v-168f1c99 {
+.container .foot-section.data-v-0006813e {
   background-color: #A11612;
   padding: 26rpx 20rpx;
 }
-.container .foot-section .bottom-section.data-v-168f1c99 {
+.container .foot-section .bottom-section.data-v-0006813e {
   background-color: #FFF5F4;
   border-radius: 10rpx;
   overflow: hidden;
 }
-.container .foot-section .bottom-section .comTop.data-v-168f1c99 {
+.container .foot-section .bottom-section .comTop.data-v-0006813e {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -54,14 +54,14 @@
   padding-top: 90rpx;
   text-align: center;
 }
-.container .foot-section .bottom-section .comTop text.data-v-168f1c99 {
+.container .foot-section .bottom-section .comTop text.data-v-0006813e {
   font-size: 32rpx;
   line-height: 54rpx;
   color: #333333;
   font-weight: 500;
 }
-.container .foot-section .bottom-section .comTop .phone.data-v-168f1c99,
-.container .foot-section .bottom-section .comTop .email.data-v-168f1c99 {
+.container .foot-section .bottom-section .comTop .phone.data-v-0006813e,
+.container .foot-section .bottom-section .comTop .email.data-v-0006813e {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -72,19 +72,19 @@
   -webkit-justify-content: center;
           justify-content: center;
 }
-.container .foot-section .bottom-section .comTop .phone image.data-v-168f1c99,
-.container .foot-section .bottom-section .comTop .email image.data-v-168f1c99 {
+.container .foot-section .bottom-section .comTop .phone image.data-v-0006813e,
+.container .foot-section .bottom-section .comTop .email image.data-v-0006813e {
   width: 44rpx;
   height: 44rpx;
   margin-right: 18rpx;
 }
-.container .foot-section .bottom-section .comTop .phone.data-v-168f1c99 {
+.container .foot-section .bottom-section .comTop .phone.data-v-0006813e {
   margin: 80rpx 0 20rpx;
 }
-.container .foot-section .bottom-section .comTop .email.data-v-168f1c99 {
+.container .foot-section .bottom-section .comTop .email.data-v-0006813e {
   margin-bottom: 150rpx;
 }
-.container .foot-section .bottom-section .code-wrap.data-v-168f1c99 {
+.container .foot-section .bottom-section .code-wrap.data-v-0006813e {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -96,7 +96,7 @@
           justify-content: center;
   margin-bottom: 63rpx;
 }
-.container .foot-section .bottom-section .code-wrap .code-inner.data-v-168f1c99 {
+.container .foot-section .bottom-section .code-wrap .code-inner.data-v-0006813e {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -109,20 +109,20 @@
           align-items: center;
   width: 350rpx;
 }
-.container .foot-section .bottom-section .code-wrap .code-inner.data-v-168f1c99:first-child {
+.container .foot-section .bottom-section .code-wrap .code-inner.data-v-0006813e:first-child {
   margin-right: 30rpx;
 }
-.container .foot-section .bottom-section .code-wrap .code-inner .text.data-v-168f1c99 {
+.container .foot-section .bottom-section .code-wrap .code-inner .text.data-v-0006813e {
   font-size: 24rpx;
   color: #333E49;
   font-weight: 400;
 }
-.container .foot-section .bottom-section .code-wrap .code-inner .code-img.data-v-168f1c99 {
+.container .foot-section .bottom-section .code-wrap .code-inner .code-img.data-v-0006813e {
   width: 200rpx;
   height: 200rpx;
   margin: 20rpx 0;
 }
-.container .foot-section .bottom-section .code-wrap .code-inner .code-tip.data-v-168f1c99 {
+.container .foot-section .bottom-section .code-wrap .code-inner .code-tip.data-v-0006813e {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -135,7 +135,7 @@
   line-height: 30rpx;
   white-space: nowrap;
 }
-.container .foot-section .bottom-section .supervise-wrap.data-v-168f1c99 {
+.container .foot-section .bottom-section .supervise-wrap.data-v-0006813e {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -150,25 +150,25 @@
   color: #646D77;
   font-weight: 400;
 }
-.container .foot-section .bottom-section .supervise-wrap .icon-phone.data-v-168f1c99 {
+.container .foot-section .bottom-section .supervise-wrap .icon-phone.data-v-0006813e {
   width: 32rpx;
   height: 27rpx;
   margin-right: 11rpx;
 }
-.container .foot-section .bottom-section .copyright.data-v-168f1c99 {
+.container .foot-section .bottom-section .copyright.data-v-0006813e {
   font-size: 20rpx;
   color: #8B8B8B;
   font-weight: 400;
   padding: 0 32rpx;
 }
-.container .foot-section .bottom-section .recordNo.data-v-168f1c99 {
+.container .foot-section .bottom-section .recordNo.data-v-0006813e {
   font-size: 16rpx;
   color: #8B8B8B;
   font-weight: 400;
   margin-top: 15rpx;
   padding: 0 32rpx;
 }
-.container .foot-section .bottom-section .government.data-v-168f1c99 {
+.container .foot-section .bottom-section .government.data-v-0006813e {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -181,7 +181,7 @@
   margin-top: 24rpx;
   padding-bottom: 36rpx;
 }
-.container .foot-section .bottom-section .government image.data-v-168f1c99 {
+.container .foot-section .bottom-section .government image.data-v-0006813e {
   width: 56rpx;
   height: 68rpx;
 }

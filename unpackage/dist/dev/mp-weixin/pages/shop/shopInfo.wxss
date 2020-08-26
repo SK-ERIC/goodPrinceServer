@@ -24,11 +24,11 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container .head-img.data-v-bfef724e {
+.container .head-img.data-v-236f3994 {
   width: 100%;
   height: 324rpx;
 }
-.container .form-section.data-v-bfef724e {
+.container .form-section.data-v-236f3994 {
   position: relative;
   margin-top: -200rpx;
   width: 100%;
@@ -36,7 +36,7 @@
   background-image: url("https://wxhyx-cdn.aisspc.cn/static/shopInfo_bg.png");
   background-size: 100% 100%;
 }
-.container .form-section .form-inner.data-v-bfef724e {
+.container .form-section .form-inner.data-v-236f3994 {
   width: 640rpx;
   position: absolute;
   left: 50%;
@@ -44,7 +44,7 @@
           transform: translateX(-50%);
   top: -64rpx;
 }
-.container .form-section .form-inner .input-wrap.data-v-bfef724e {
+.container .form-section .form-inner .input-wrap.data-v-236f3994 {
   height: 94rpx;
   border: 1rpx solid #DFDFDF;
   border-radius: 14rpx;
@@ -57,33 +57,33 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.container .form-section .form-inner .input-wrap.type-area.data-v-bfef724e {
+.container .form-section .form-inner .input-wrap.type-area.data-v-236f3994 {
   height: 94rpx;
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
 }
-.container .form-section .form-inner .input-wrap.type-area .input-item-l.data-v-bfef724e {
+.container .form-section .form-inner .input-wrap.type-area .input-item-l.data-v-236f3994 {
   line-height: 92rpx;
 }
-.container .form-section .form-inner .input-wrap.type-area .input-item-r textarea.data-v-bfef724e {
+.container .form-section .form-inner .input-wrap.type-area .input-item-r textarea.data-v-236f3994 {
   padding: 6 0rpx;
   width: 430rpx;
   height: 84rpx;
 }
-.container .form-section .form-inner .input-wrap .input-item-l.data-v-bfef724e {
+.container .form-section .form-inner .input-wrap .input-item-l.data-v-236f3994 {
   font-size: 30rpx;
   color: #363636;
   margin-left: 30rpx;
   white-space: nowrap;
 }
-.container .form-section .form-inner .input-wrap .input-item-r.data-v-bfef724e {
+.container .form-section .form-inner .input-wrap .input-item-r.data-v-236f3994 {
   margin-left: 50rpx;
 }
-.container .form-section .form-inner .input-wrap .input-item-r input.data-v-bfef724e {
+.container .form-section .form-inner .input-wrap .input-item-r input.data-v-236f3994 {
   height: 94rpx;
 }
-.container .form-section .form-inner .input-wrap .input-item-r.timer-picker.data-v-bfef724e {
+.container .form-section .form-inner .input-wrap .input-item-r.timer-picker.data-v-236f3994 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -94,26 +94,26 @@
   -webkit-justify-content: center;
           justify-content: center;
 }
-.container .form-section .form-inner .input-wrap .input-item-r.timer-picker input.data-v-bfef724e {
+.container .form-section .form-inner .input-wrap .input-item-r.timer-picker input.data-v-236f3994 {
   text-align: center;
 }
-.container .form-section .form-inner .input-wrap .input-item-r.timer-picker .line.data-v-bfef724e {
+.container .form-section .form-inner .input-wrap .input-item-r.timer-picker .line.data-v-236f3994 {
   width: 40rpx;
   height: 0;
   border-bottom: 2rpx solid #333333;
 }
-.container .form-section .form-inner .upload-section .title.data-v-bfef724e {
+.container .form-section .form-inner .upload-section .title.data-v-236f3994 {
   font-size: 30rpx;
   color: #363636;
   font-weight: bold;
   margin-left: 20rpx;
   line-height: 90rpx;
 }
-.container .form-section .form-inner .upload-section .title text.data-v-bfef724e {
+.container .form-section .form-inner .upload-section .title text.data-v-236f3994 {
   color: #666666;
   font-weight: 400;
 }
-.container .form-section .form-inner .upload-section .upload-wrap.data-v-bfef724e {
+.container .form-section .form-inner .upload-section .upload-wrap.data-v-236f3994 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -123,7 +123,7 @@
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-.container .form-section .form-inner .upload-section .upload-wrap .upload-inner.data-v-bfef724e {
+.container .form-section .form-inner .upload-section .upload-wrap .upload-inner.data-v-236f3994 {
   width: 154rpx;
   height: 154rpx;
   position: relative;
@@ -132,14 +132,14 @@
   margin-right: 30rpx;
   margin-bottom: 20rpx;
 }
-.container .form-section .form-inner .upload-section .upload-wrap .upload-inner.data-v-bfef724e:nth-child(3n) {
+.container .form-section .form-inner .upload-section .upload-wrap .upload-inner.data-v-236f3994:nth-child(3n) {
   margin-right: 0;
 }
-.container .form-section .form-inner .upload-section .upload-wrap .upload-inner image.data-v-bfef724e {
+.container .form-section .form-inner .upload-section .upload-wrap .upload-inner image.data-v-236f3994 {
   width: 154rpx;
   height: 154rpx;
 }
-.container .form-section .form-inner .upload-section .upload-wrap .upload-inner .del-img.data-v-bfef724e {
+.container .form-section .form-inner .upload-section .upload-wrap .upload-inner .del-img.data-v-236f3994 {
   width: 42rpx;
   height: 40rpx;
   position: absolute;
@@ -147,7 +147,7 @@
   top: 0;
   z-index: 2;
 }
-.container .form-section .form-inner .btn-section.data-v-bfef724e {
+.container .form-section .form-inner .btn-section.data-v-236f3994 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -159,7 +159,7 @@
           justify-content: center;
   padding: 65rpx 0;
 }
-.container .form-section .form-inner .btn-section .save-btn.data-v-bfef724e {
+.container .form-section .form-inner .btn-section .save-btn.data-v-236f3994 {
   width: 590rpx;
   height: 100rpx;
   background-color: #F75347;

@@ -24,15 +24,15 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container .check-section.data-v-6cac817a {
+.container .check-section.data-v-5def3e68 {
   padding: 30rpx 65rpx 0;
 }
-.container .check-section .img.data-v-6cac817a {
+.container .check-section .img.data-v-5def3e68 {
   width: 100%;
   height: 336rpx;
   margin-bottom: 70rpx;
 }
-.container .check-section .text-inner.data-v-6cac817a {
+.container .check-section .text-inner.data-v-5def3e68 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -41,7 +41,7 @@
           align-items: center;
   margin-bottom: 36rpx;
 }
-.container .check-section .text-inner .text-l.data-v-6cac817a {
+.container .check-section .text-inner .text-l.data-v-5def3e68 {
   -webkit-box-flex: .3;
   -webkit-flex: .3;
           flex: .3;
@@ -49,7 +49,7 @@
   font-weight: 800;
   color: #363636;
 }
-.container .check-section .text-inner .text-r.data-v-6cac817a {
+.container .check-section .text-inner .text-r.data-v-5def3e68 {
   -webkit-box-flex: .7;
   -webkit-flex: .7;
           flex: .7;
@@ -57,7 +57,7 @@
   font-weight: 500;
   color: #142340;
 }
-.container .btn-section.data-v-6cac817a {
+.container .btn-section.data-v-5def3e68 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -69,7 +69,7 @@
           justify-content: center;
   padding-top: 130rpx;
 }
-.container .btn-section .btn.data-v-6cac817a {
+.container .btn-section .btn.data-v-5def3e68 {
   width: 590rpx;
   height: 100rpx;
   background-color: #F75347;

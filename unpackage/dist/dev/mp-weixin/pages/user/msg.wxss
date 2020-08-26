@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container .navBack.data-v-c744d45e {
+.container .navBack.data-v-8c5acb94 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: inline-flex;
@@ -39,13 +39,13 @@
   margin-left: 27rpx;
   margin-bottom: 30rpx;
 }
-.container .navBack .cuIcon-back.data-v-c744d45e {
+.container .navBack .cuIcon-back.data-v-8c5acb94 {
   margin-right: 30rpx;
 }
-.container .msg-wrap.data-v-c744d45e {
+.container .msg-wrap.data-v-8c5acb94 {
   padding: 0 45rpx;
 }
-.container .msg-wrap .msg-section.data-v-c744d45e {
+.container .msg-wrap .msg-section.data-v-8c5acb94 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -58,15 +58,15 @@
   height: 150rpx;
   border-bottom: 2rpx solid #F3F3F3;
 }
-.container .msg-wrap .msg-section .msg-item-l.data-v-c744d45e {
+.container .msg-wrap .msg-section .msg-item-l.data-v-8c5acb94 {
   position: relative;
 }
-.container .msg-wrap .msg-section .msg-item-l .img.data-v-c744d45e {
+.container .msg-wrap .msg-section .msg-item-l .img.data-v-8c5acb94 {
   width: 84rpx;
   height: 84rpx;
   border-radius: 50%;
 }
-.container .msg-wrap .msg-section .msg-item-l .dot.data-v-c744d45e {
+.container .msg-wrap .msg-section .msg-item-l .dot.data-v-8c5acb94 {
   width: 25rpx;
   height: 25rpx;
   border-radius: 50%;
@@ -76,7 +76,7 @@
   right: -7rpx;
   border: 1rpx solid #FFFFFF;
 }
-.container .msg-wrap .msg-section .msg-item-r.data-v-c744d45e {
+.container .msg-wrap .msg-section .msg-item-r.data-v-8c5acb94 {
   height: 84rpx;
   width: 84%;
   display: -webkit-box;
@@ -90,7 +90,7 @@
   -webkit-justify-content: space-between;
           justify-content: space-between;
 }
-.container .msg-wrap .msg-section .msg-item-r .item-inner-t.data-v-c744d45e {
+.container .msg-wrap .msg-section .msg-item-r .item-inner-t.data-v-8c5acb94 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -101,16 +101,16 @@
   -webkit-justify-content: space-between;
           justify-content: space-between;
 }
-.container .msg-wrap .msg-section .msg-item-r .item-inner-t .title.data-v-c744d45e {
+.container .msg-wrap .msg-section .msg-item-r .item-inner-t .title.data-v-8c5acb94 {
   font-size: 32rpx;
   color: #142340;
   font-weight: 600;
 }
-.container .msg-wrap .msg-section .msg-item-r .item-inner-t .date.data-v-c744d45e {
+.container .msg-wrap .msg-section .msg-item-r .item-inner-t .date.data-v-8c5acb94 {
   font-size: 24rpx;
   color: #B1B1B1;
 }
-.container .msg-wrap .msg-section .msg-item-r .item-inner-b.data-v-c744d45e {
+.container .msg-wrap .msg-section .msg-item-r .item-inner-b.data-v-8c5acb94 {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

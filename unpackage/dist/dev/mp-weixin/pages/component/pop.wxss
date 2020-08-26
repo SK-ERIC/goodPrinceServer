@@ -24,7 +24,7 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.pop-section.data-v-116bd85b {
+.pop-section.data-v-d65a69d4 {
   width: 590rpx;
   height: 480rpx;
   background-color: #FFFFFF;
@@ -43,12 +43,12 @@
   -webkit-justify-content: space-between;
           justify-content: space-between;
 }
-.pop-section .title.data-v-116bd85b {
+.pop-section .title.data-v-d65a69d4 {
   font-size: 34rpx;
   color: #666666;
   line-height: 122rpx;
 }
-.pop-section .cont.data-v-116bd85b {
+.pop-section .cont.data-v-d65a69d4 {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
@@ -58,7 +58,7 @@
   width: 390rpx;
   line-height: 44rpx;
 }
-.pop-section .btn.data-v-116bd85b {
+.pop-section .btn.data-v-d65a69d4 {
   width: 440rpx;
   height: 90rpx;
   background-color: #FF544C;

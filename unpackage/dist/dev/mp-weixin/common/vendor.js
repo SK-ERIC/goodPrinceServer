@@ -144,7 +144,7 @@ function queue(hooks, data) {
   for (var i = 0; i < hooks.length; i++) {
     var hook = hooks[i];
     if (promise) {
-      promise = Promise.then(wrapperHook(hook));
+      promise = Promise.resolve(wrapperHook(hook));
     } else {
       var res = hook(data);
       if (isPromise(res)) {
@@ -346,9 +346,9 @@ function upx2px(number, newDeviceWidth) {
   result = Math.floor(result + EPS);
   if (result === 0) {
     if (deviceDPR === 1 || !isIOS) {
-      return 1;
+      result = 1;
     } else {
-      return 0.5;
+      result = 0.5;
     }
   }
   return number < 0 ? -result : result;
@@ -421,7 +421,10 @@ var protocols = {
 
 
 var todos = [
-'vibrate'];
+'vibrate',
+'preloadPage',
+'unPreloadPage',
+'loadSubPackage'];
 
 var canIUses = [];
 
@@ -453,7 +456,9 @@ function processArgs(methodName, fromArgs) {var argsOption = arguments.length > 
           toArgs[keyOption.name ? keyOption.name : key] = keyOption.value;
         }
       } else if (CALLBACKS.indexOf(key) !== -1) {
-        toArgs[key] = processCallback(methodName, fromArgs[key], returnValue);
+        if (isFn(fromArgs[key])) {
+          toArgs[key] = processCallback(methodName, fromArgs[key], returnValue);
+        }
       } else {
         if (!keepFromArgs) {
           toArgs[key] = fromArgs[key];
@@ -568,10 +573,6 @@ var extraApi = /*#__PURE__*/Object.freeze({
 
 
 var getEmitter = function () {
-  if (typeof getUniEmitter === 'function') {
-    /* eslint-disable no-undef */
-    return getUniEmitter;
-  }
   var Emitter;
   return function getUniEmitter() {
     if (!Emitter) {
@@ -658,6 +659,8 @@ Component = function Component() {var options = arguments.length > 0 && argument
 var PAGE_EVENT_HOOKS = [
 'onPullDownRefresh',
 'onReachBottom',
+'onAddToFavorites',
+'onShareTimeline',
 'onShareAppMessage',
 'onPageScroll',
 'onResize',
@@ -944,7 +947,18 @@ function getExtraValue(vm, dataPathsArray) {
       var propPath = dataPathArray[1];
       var valuePath = dataPathArray[3];
 
-      var vFor = dataPath ? vm.__get_value(dataPath, context) : context;
+      var vFor;
+      if (Number.isInteger(dataPath)) {
+        vFor = dataPath;
+      } else if (!dataPath) {
+        vFor = context;
+      } else if (typeof dataPath === 'string' && dataPath) {
+        if (dataPath.indexOf('#s#') === 0) {
+          vFor = dataPath.substr(3);
+        } else {
+          vFor = vm.__get_value(dataPath, context);
+        }
+      }
 
       if (Number.isInteger(vFor)) {
         context = value;
@@ -994,6 +1008,12 @@ function processEventExtra(vm, extra, event) {
         } else {
           if (dataPath === '$event') {// $event
             extraObj['$' + index] = event;
+          } else if (dataPath === 'arguments') {
+            if (event.detail && event.detail.__args__) {
+              extraObj['$' + index] = event.detail.__args__;
+            } else {
+              extraObj['$' + index] = [event];
+            }
           } else if (dataPath.indexOf('$event.') === 0) {// $event.target.value
             extraObj['$' + index] = vm.__get_value(dataPath.replace('$event.', ''), event);
           } else {
@@ -1074,6 +1094,15 @@ function isMatchEventType(eventType, optType) {
 
 }
 
+function getContextVm(vm) {
+  var $parent = vm.$parent;
+  // 父组件是 scoped slots 或者其他自定义组件时继续查找
+  while ($parent && $parent.$parent && ($parent.$options.generic || $parent.$parent.$options.generic || $parent.$scope._$vuePid)) {
+    $parent = $parent.$parent;
+  }
+  return $parent && $parent.$parent;
+}
+
 function handleEvent(event) {var _this = this;
   event = wrapper$1(event);
 
@@ -1106,12 +1135,8 @@ function handleEvent(event) {var _this = this;
         var methodName = eventArray[0];
         if (methodName) {
           var handlerCtx = _this.$vm;
-          if (
-          handlerCtx.$options.generic &&
-          handlerCtx.$parent &&
-          handlerCtx.$parent.$parent)
-          {// mp-weixin,mp-toutiao 抽象节点模拟 scoped slots
-            handlerCtx = handlerCtx.$parent.$parent;
+          if (handlerCtx.$options.generic) {// mp-weixin,mp-toutiao 抽象节点模拟 scoped slots
+            handlerCtx = getContextVm(handlerCtx) || handlerCtx;
           }
           if (methodName === '$emit') {
             handlerCtx.$emit.apply(handlerCtx,
@@ -1161,7 +1186,9 @@ var hooks = [
 'onShow',
 'onHide',
 'onError',
-'onPageNotFound'];
+'onPageNotFound',
+'onThemeChange',
+'onUnhandledRejection'];
 
 
 function parseBaseApp(vm, _ref3)
@@ -1495,7 +1522,7 @@ var uni = {};
 if (typeof Proxy !== 'undefined' && "mp-weixin" !== 'app-plus') {
   uni = new Proxy({}, {
     get: function get(target, name) {
-      if (target[name]) {
+      if (hasOwn(target, name)) {
         return target[name];
       }
       if (baseApi[name]) {
@@ -1694,9 +1721,9 @@ function normalizeComponent (
 /***/ }),
 
 /***/ 125:
-/*!**************************************************************************!*\
-  !*** D:/UNI/goodPrinceServer/components/mescroll-uni/mescroll-mixins.js ***!
-  \**************************************************************************/
+/*!*****************************************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/components/mescroll-uni/mescroll-mixins.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1765,9 +1792,9 @@ MescrollMixin;exports.default = _default;
 /***/ }),
 
 /***/ 13:
-/*!******************************************!*\
-  !*** D:/UNI/goodPrinceServer/service.js ***!
-  \******************************************/
+/*!*********************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/service.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -4082,9 +4109,9 @@ module.exports = Array.isArray || function (arr) {
 /***/ }),
 
 /***/ 138:
-/*!***************************************************************!*\
-  !*** D:/UNI/goodPrinceServer/components/image-tools/index.js ***!
-  \***************************************************************/
+/*!******************************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/components/image-tools/index.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5031,9 +5058,9 @@ if (hadRuntime) {
 /***/ }),
 
 /***/ 162:
-/*!***********************************************************************!*\
-  !*** D:/UNI/goodPrinceServer/components/mescroll-uni/mescroll-uni.js ***!
-  \***********************************************************************/
+/*!**************************************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/components/mescroll-uni/mescroll-uni.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5905,9 +5932,9 @@ MeScroll.prototype.setBounce = function (isBounce) {
 /***/ }),
 
 /***/ 163:
-/*!******************************************************************************!*\
-  !*** D:/UNI/goodPrinceServer/components/mescroll-uni/mescroll-uni-option.js ***!
-  \******************************************************************************/
+/*!*********************************************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/components/mescroll-uni/mescroll-uni-option.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -5950,9 +5977,9 @@ GlobalOption;exports.default = _default;
 /***/ }),
 
 /***/ 17:
-/*!*********************************************!*\
-  !*** D:/UNI/goodPrinceServer/config/api.js ***!
-  \*********************************************/
+/*!************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/config/api.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6233,9 +6260,9 @@ exports.postIsRead = postIsRead;var postSetChagesub = function postSetChagesub(d
 /***/ }),
 
 /***/ 18:
-/*!************************************************!*\
-  !*** D:/UNI/goodPrinceServer/config/common.js ***!
-  \************************************************/
+/*!***************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/config/common.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6503,9 +6530,9 @@ function moneySub(value1, value2) {
 /***/ }),
 
 /***/ 19:
-/*!********************************************!*\
-  !*** D:/UNI/goodPrinceServer/config/db.js ***!
-  \********************************************/
+/*!***********************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/config/db.js ***!
+  \***********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -6617,9 +6644,9 @@ function userMobile() {
 /***/ }),
 
 /***/ 192:
-/*!******************************************************************!*\
-  !*** D:/UNI/goodPrinceServer/components/skeleton/animation.scss ***!
-  \******************************************************************/
+/*!*********************************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/components/skeleton/animation.scss ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -7263,12 +7290,10 @@ if (true) {
   };
 
   formatComponentName = function (vm, includeFile) {
-    {
-      if(vm.$scope && vm.$scope.is){
-        return vm.$scope.is
-      }
-    }
     if (vm.$root === vm) {
+      if (vm.$options && vm.$options.__file) { // fixed by xxxxxx
+        return ('') + vm.$options.__file
+      }
       return '<Root>'
     }
     var options = typeof vm === 'function' && vm.cid != null
@@ -7303,7 +7328,7 @@ if (true) {
     if (vm._isVue && vm.$parent) {
       var tree = [];
       var currentRecursiveSequence = 0;
-      while (vm) {
+      while (vm && vm.$options.name !== 'PageBody') {
         if (tree.length > 0) {
           var last = tree[tree.length - 1];
           if (last.constructor === vm.constructor) {
@@ -7315,7 +7340,7 @@ if (true) {
             currentRecursiveSequence = 0;
           }
         }
-        tree.push(vm);
+        !vm.$options.isReserved && tree.push(vm);
         vm = vm.$parent;
       }
       return '\n\nfound in\n\n' + tree
@@ -7338,13 +7363,7 @@ var uid = 0;
  * directives subscribing to it.
  */
 var Dep = function Dep () {
-  // fixed by xxxxxx (nvue vuex)
-  /* eslint-disable no-undef */
-  if(typeof SharedObject !== 'undefined'){
-    this.id = SharedObject.uid++;
-  } else {
-    this.id = uid++;
-  }
+  this.id = uid++;
   this.subs = [];
 };
 
@@ -7381,7 +7400,7 @@ Dep.prototype.notify = function notify () {
 // can be evaluated at a time.
 // fixed by xxxxxx (nvue shared vuex)
 /* eslint-disable no-undef */
-Dep.SharedObject = typeof SharedObject !== 'undefined' ? SharedObject : {};
+Dep.SharedObject = {};
 Dep.SharedObject.target = null;
 Dep.SharedObject.targetStack = [];
 
@@ -12231,6 +12250,15 @@ function cloneWithData(vm) {
     ret[key] = vm[key];
     return ret
   }, ret);
+
+  // vue-composition-api
+  var rawBindings = vm.__secret_vfa_state__ && vm.__secret_vfa_state__.rawBindings;
+  if (rawBindings) {
+    Object.keys(rawBindings).forEach(function (key) {
+      ret[key] = vm[key];
+    });
+  }
+  
   //TODO 需要把无用数据处理掉，比如 list=>l0 则 list 需要移除，否则多传输一份数据
   Object.assign(ret, vm.$mp.data || {});
   if (
@@ -12437,7 +12465,8 @@ function getTarget(obj, path) {
 
 function internalMixin(Vue) {
 
-  Vue.config.errorHandler = function(err) {
+  Vue.config.errorHandler = function(err, vm, info) {
+    Vue.util.warn(("Error in " + info + ": \"" + (err.toString()) + "\""), vm);
     console.error(err);
     /* eslint-disable no-undef */
     var app = getApp();
@@ -12582,7 +12611,10 @@ var LIFECYCLE_HOOKS$1 = [
     'onShow',
     'onHide',
     'onUniNViewMessage',
+    'onPageNotFound',
+    'onThemeChange',
     'onError',
+    'onUnhandledRejection',
     //Page
     'onLoad',
     // 'onShow',
@@ -12592,6 +12624,8 @@ var LIFECYCLE_HOOKS$1 = [
     'onPullDownRefresh',
     'onReachBottom',
     'onTabItemTap',
+    'onAddToFavorites',
+    'onShareTimeline',
     'onShareAppMessage',
     'onResize',
     'onPageScroll',
@@ -12660,9 +12694,9 @@ internalMixin(Vue);
 /***/ }),
 
 /***/ 20:
-/*!**********************************************!*\
-  !*** D:/UNI/goodPrinceServer/config/path.js ***!
-  \**********************************************/
+/*!*************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/config/path.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -12693,9 +12727,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.PH = void 
 /***/ }),
 
 /***/ 212:
-/*!***************************************************************!*\
-  !*** D:/UNI/goodPrinceServer/components/tki-qrcode/qrcode.js ***!
-  \***************************************************************/
+/*!******************************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/components/tki-qrcode/qrcode.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13906,9 +13940,9 @@ QRCode;exports.default = _default;
 /***/ }),
 
 /***/ 241:
-/*!*************************************************************!*\
-  !*** D:/UNI/goodPrinceServer/components/uni-icons/icons.js ***!
-  \*************************************************************/
+/*!****************************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/components/uni-icons/icons.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -14048,15 +14082,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 /***/ }),
 
 /***/ 27:
-/*!************************************************!*\
-  !*** D:/UNI/goodPrinceServer/config/WxAuth.js ***!
-  \************************************************/
+/*!***************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/config/WxAuth.js ***!
+  \***************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(uni) {var _regeneratorRuntime = __webpack_require__(/*! ./node_modules/@vue/babel-preset-app/node_modules/@babel/runtime/regenerator */ 14);function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {try {var info = gen[key](arg);var value = info.value;} catch (error) {reject(error);return;}if (info.done) {resolve(value);} else {Promise.resolve(value).then(_next, _throw);}}function _asyncToGenerator(fn) {return function () {var self = this,args = arguments;return new Promise(function (resolve, reject) {var gen = fn.apply(self, args);function _next(value) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);}function _throw(err) {asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);}_next(undefined);});};} /**
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  * 检查登录态是否过期
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  */
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     * 检查登录态是否过期
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     */
 function checkSession() {
   return new Promise(function (resolve, reject) {
     wx.checkSession({
@@ -14136,9 +14170,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 4:
-/*!******************************************!*\
-  !*** D:/UNI/goodPrinceServer/pages.json ***!
-  \******************************************/
+/*!*********************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/pages.json ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -14147,9 +14181,9 @@ module.exports = g;
 /***/ }),
 
 /***/ 5:
-/*!**********************************************!*\
-  !*** D:/UNI/goodPrinceServer/store/index.js ***!
-  \**********************************************/
+/*!*************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/store/index.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15146,9 +15180,9 @@ var index_esm = {
 /***/ }),
 
 /***/ 76:
-/*!***************************************************************************!*\
-  !*** D:/UNI/goodPrinceServer/components/tui-validation/tui-validation.js ***!
-  \***************************************************************************/
+/*!******************************************************************************!*\
+  !*** D:/UNIAPP/goodPrinceServer/components/tui-validation/tui-validation.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 

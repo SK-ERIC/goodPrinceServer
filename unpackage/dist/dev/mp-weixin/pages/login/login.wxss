@@ -24,13 +24,13 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container.data-v-9b0c1b42 {
+.container.data-v-b237504c {
   min-height: 100vh;
   background-image: url("https://wxhyx-cdn.aisspc.cn/static/login_bg_shop.png");
   background-size: 100% 100%;
   position: relative;
 }
-.container .server-section.data-v-9b0c1b42 {
+.container .server-section.data-v-b237504c {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -44,14 +44,14 @@
   border-radius: 14rpx;
   margin-bottom: 24rpx;
 }
-.container .server-section input.data-v-9b0c1b42 {
+.container .server-section input.data-v-b237504c {
   color: #FFFFFF;
 }
-.container .server-section .holder.data-v-9b0c1b42 {
+.container .server-section .holder.data-v-b237504c {
   font-size: 28rpx;
   color: #75767D;
 }
-.container .server-section .item-l.data-v-9b0c1b42 {
+.container .server-section .item-l.data-v-b237504c {
   font-size: 34rpx;
   color: #FFFFFF;
   font-weight: 800;
@@ -61,7 +61,7 @@
   white-space: nowrap;
   margin-left: 30rpx;
 }
-.container .server-section .item-r.data-v-9b0c1b42 {
+.container .server-section .item-r.data-v-b237504c {
   -webkit-box-flex: .75;
   -webkit-flex: .75;
           flex: .75;
@@ -72,7 +72,7 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.container .server-section .item-r .getNum.data-v-9b0c1b42 {
+.container .server-section .item-r .getNum.data-v-b237504c {
   border: none;
   font-size: 28rpx;
   color: #FF473E;
@@ -81,7 +81,7 @@
   margin-right: 25rpx;
   background-color: rgba(255, 255, 255, 0);
 }
-.container .server-section .item-r .phoneCode.data-v-9b0c1b42 {
+.container .server-section .item-r .phoneCode.data-v-b237504c {
   font-size: 28rpx;
   color: #FF473E;
   font-weight: 500;
@@ -90,7 +90,7 @@
   border-left: 1rpx solid #FF473E;
   padding-left: 12rpx;
 }
-.container .logo.data-v-9b0c1b42 {
+.container .logo.data-v-b237504c {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -104,15 +104,15 @@
   padding-top: 164rpx;
   margin-bottom: 123rpx;
 }
-.container .logo.server.data-v-9b0c1b42 {
+.container .logo.server.data-v-b237504c {
   padding-top: 154rpx;
   margin-bottom: 0;
 }
-.container .logo image.data-v-9b0c1b42 {
+.container .logo image.data-v-b237504c {
   width: 200rpx;
   height: 200rpx;
 }
-.container .platform.data-v-9b0c1b42 {
+.container .platform.data-v-b237504c {
   font-size: 40rpx;
   font-weight: 500;
   font-style: italic;
@@ -129,10 +129,10 @@
   text-align: center;
   line-height: 1;
 }
-.container .platform text.data-v-9b0c1b42:first-child {
+.container .platform text.data-v-b237504c:first-child {
   margin-bottom: 20rpx;
 }
-.container .switch-text.data-v-9b0c1b42 {
+.container .switch-text.data-v-b237504c {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -147,10 +147,10 @@
   text-align: center;
   margin: 50rpx auto 0;
 }
-.container .switch-text .cuIcon-roundrightfill.data-v-9b0c1b42 {
+.container .switch-text .cuIcon-roundrightfill.data-v-b237504c {
   margin-left: 10rpx;
 }
-.container .btn-section.data-v-9b0c1b42 {
+.container .btn-section.data-v-b237504c {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -162,10 +162,10 @@
           justify-content: center;
   padding-top: 40rpx;
 }
-.container .btn-section.type-server.data-v-9b0c1b42 {
+.container .btn-section.type-server.data-v-b237504c {
   padding-top: 53rpx;
 }
-.container .btn-section .loginBtn.data-v-9b0c1b42 {
+.container .btn-section .loginBtn.data-v-b237504c {
   width: 640rpx;
   height: 98rpx;
   background-color: #D82A2B;
@@ -174,7 +174,7 @@
   font-size: 34rpx;
   margin: 0 auto;
 }
-.container .btm-section.data-v-9b0c1b42 {
+.container .btm-section.data-v-b237504c {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -199,7 +199,7 @@
   font-family: Source Han Sans CN;
   font-weight: 400;
 }
-.container .btm-section text.data-v-9b0c1b42 {
+.container .btm-section text.data-v-b237504c {
   white-space: nowrap;
 }
 

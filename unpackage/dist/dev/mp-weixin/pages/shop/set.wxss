@@ -24,10 +24,10 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container .set-section.data-v-a0963346 {
+.container .set-section.data-v-65ac2a7c {
   padding: 30rpx 38rpx 0;
 }
-.container .set-section .set-inner.data-v-a0963346 {
+.container .set-section .set-inner.data-v-65ac2a7c {
   height: 150rpx;
   display: -webkit-box;
   display: -webkit-flex;
@@ -40,7 +40,7 @@
           justify-content: space-between;
   border-bottom: 2rpx solid #F3F3F3;
 }
-.container .set-section .set-inner .set-item-l.data-v-a0963346 {
+.container .set-section .set-inner .set-item-l.data-v-65ac2a7c {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -48,17 +48,17 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.container .set-section .set-inner .set-item-l .logo.data-v-a0963346 {
+.container .set-section .set-inner .set-item-l .logo.data-v-65ac2a7c {
   width: 88rpx;
   height: 88rpx;
 }
-.container .set-section .set-inner .set-item-l text.data-v-a0963346 {
+.container .set-section .set-inner .set-item-l text.data-v-65ac2a7c {
   font-size: 32rpx;
   color: #142340;
   font-weight: 800;
   margin-left: 25rpx;
 }
-.container .set-section .set-inner .set-item-r .cuIcon-right.data-v-a0963346 {
+.container .set-section .set-inner .set-item-r .cuIcon-right.data-v-65ac2a7c {
   font-size: 24rpx;
   color: #B1B1B1;
 }

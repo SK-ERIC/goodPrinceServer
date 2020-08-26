@@ -24,22 +24,22 @@
 /* 垂直间距 */
 /* 透明度 */
 /* 文章场景相关 */
-.container.data-v-1fdd529c {
+.container.data-v-0954b741 {
   background-color: #FFFFFF;
 }
-.container .comment-section.data-v-1fdd529c {
+.container .comment-section.data-v-0954b741 {
   padding: 0 40rpx;
 }
-.container .comment-section .title.data-v-1fdd529c {
+.container .comment-section .title.data-v-0954b741 {
   font-size: 36rpx;
   color: #282828;
   font-weight: 500;
   line-height: 96rpx;
 }
-.container .comment-section .comment-list.data-v-1fdd529c {
+.container .comment-section .comment-list.data-v-0954b741 {
   padding-top: 10rpx;
 }
-.container .comment-section .comment-list .comment-cont.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont.data-v-0954b741 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -50,10 +50,10 @@
   padding-bottom: 50rpx;
   border-bottom: 2rpx solid #EFEFEF;
 }
-.container .comment-section .comment-list .comment-cont.data-v-1fdd529c:last-child {
+.container .comment-section .comment-list .comment-cont.data-v-0954b741:last-child {
   border-bottom: none;
 }
-.container .comment-section .comment-list .comment-cont .info-wrap.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .info-wrap.data-v-0954b741 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -62,12 +62,12 @@
           justify-content: flex-start;
   padding-top: 27rpx;
 }
-.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-l image.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-l image.data-v-0954b741 {
   width: 90rpx;
   height: 90rpx;
   border-radius: 50%;
 }
-.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-r.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-r.data-v-0954b741 {
   margin-left: 22rpx;
   display: -webkit-box;
   display: -webkit-flex;
@@ -79,20 +79,20 @@
   -webkit-justify-content: space-around;
           justify-content: space-around;
 }
-.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-r .user.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-r .user.data-v-0954b741 {
   font-size: 32rpx;
   color: #222222;
   font-weight: 500;
 }
-.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-r .date.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .info-wrap .info-inner-r .date.data-v-0954b741 {
   font-size: 24rpx;
   color: #B1B1B1;
   font-weight: 400;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner.data-v-0954b741 {
   padding-left: 114rpx;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap.data-v-0954b741 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -104,7 +104,7 @@
           justify-content: space-between;
   margin: 45rpx 0 40rpx;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-l.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-l.data-v-0954b741 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -115,13 +115,13 @@
   -webkit-align-items: baseline;
           align-items: baseline;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-l .text.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-l .text.data-v-0954b741 {
   color: #282828;
   font-size: 24rpx;
   font-weight: 500;
   margin-right: 16rpx;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r.data-v-0954b741 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -129,21 +129,21 @@
   -webkit-align-items: center;
           align-items: center;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r .like-icon.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r .like-icon.data-v-0954b741 {
   width: 34rpx;
   height: 34rpx;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r .text.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .rate-wrap .rate-inner-r .text.data-v-0954b741 {
   font-size: 30rpx;
   color: #B1B1B1;
   font-weight: 400;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .art.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .art.data-v-0954b741 {
   font-size: 30rpx;
   font-weight: 500;
   color: #333333;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .art.cut.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .art.cut.data-v-0954b741 {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -152,12 +152,12 @@
   overflow: hidden;
   white-space: normal;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .fullText.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .fullText.data-v-0954b741 {
   font-size: 30rpx;
   color: #FF903A;
   margin: 26rpx 0 14rpx;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .img-list.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .img-list.data-v-0954b741 {
   padding: 30rpx 0;
   display: -webkit-box;
   display: -webkit-flex;
@@ -168,19 +168,19 @@
   -webkit-flex-wrap: wrap;
           flex-wrap: wrap;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .img-list .img-cont.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .img-list .img-cont.data-v-0954b741 {
   margin-right: 18rpx;
   margin-bottom: 18rpx;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .img-list .img-cont.data-v-1fdd529c:nth-child(3n) {
+.container .comment-section .comment-list .comment-cont .comment-inner .img-list .img-cont.data-v-0954b741:nth-child(3n) {
   margin-right: 0;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .img-list .img-cont image.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .img-list .img-cont image.data-v-0954b741 {
   width: 174rpx;
   height: 174rpx;
   border-radius: 14rpx;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .reply-warp.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .reply-warp.data-v-0954b741 {
   min-height: 70rpx;
   padding: 20rpx;
   font-size: 24rpx;
@@ -188,13 +188,13 @@
   background-color: #F3F3F4;
   border-radius: 6rpx;
 }
-.container .comment-section .comment-list .comment-cont .comment-inner .reply-warp .reply.data-v-1fdd529c {
+.container .comment-section .comment-list .comment-cont .comment-inner .reply-warp .reply.data-v-0954b741 {
   color: #333333;
   font-weight: 500;
   word-break: keep-all;
   display: inline;
 }
-.container .comment-section .comment-list .nthing-section.data-v-1fdd529c {
+.container .comment-section .comment-list .nthing-section.data-v-0954b741 {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
@@ -208,16 +208,16 @@
   padding-top: 230rpx;
   padding-bottom: 130rpx;
 }
-.container .comment-section .comment-list .nthing-section .nthing-img.data-v-1fdd529c {
+.container .comment-section .comment-list .nthing-section .nthing-img.data-v-0954b741 {
   width: 220rpx;
   height: 220rpx;
 }
-.container .comment-section .comment-list .nthing-section .nthing-text.data-v-1fdd529c {
+.container .comment-section .comment-list .nthing-section .nthing-text.data-v-0954b741 {
   margin: 40rpx 0 56rpx;
   font-size: 30rpx;
   color: #AFB0B5;
 }
-.container .comment-section .comment-list .nthing-section .nthing-btn.data-v-1fdd529c {
+.container .comment-section .comment-list .nthing-section .nthing-btn.data-v-0954b741 {
   width: 480rpx;
   height: 100rpx;
   background-color: #FF544C;
@@ -227,7 +227,7 @@
   text-align: center;
   font-weight: 400;
 }
-.container .pop-section.data-v-1fdd529c {
+.container .pop-section.data-v-0954b741 {
   width: 590rpx;
   height: 480rpx;
   background-color: #FFFFFF;
@@ -246,12 +246,12 @@
   -webkit-justify-content: space-between;
           justify-content: space-between;
 }
-.container .pop-section .title.data-v-1fdd529c {
+.container .pop-section .title.data-v-0954b741 {
   font-size: 34rpx;
   color: #666666;
   line-height: 122rpx;
 }
-.container .pop-section .cont.data-v-1fdd529c {
+.container .pop-section .cont.data-v-0954b741 {
   -webkit-box-flex: 1;
   -webkit-flex: 1;
           flex: 1;
@@ -261,7 +261,7 @@
   width: 390rpx;
   line-height: 44rpx;
 }
-.container .pop-section .btn.data-v-1fdd529c {
+.container .pop-section .btn.data-v-0954b741 {
   width: 440rpx;
   height: 90rpx;
   background-color: #FF544C;

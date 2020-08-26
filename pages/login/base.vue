@@ -1,6 +1,6 @@
 <template>
 	<view class="container">
-		<text class="one">欢迎使用 无锡好印象-经营评价平台</text>
+		<text class="one">欢迎使用 通江好印象-经营评价平台</text>
 		<text class="two">请确认授权以下信息</text>
 		<text class="three">获取你的公开信息（昵称、头像等）</text>
 		<view class="btn-section">

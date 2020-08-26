@@ -6,17 +6,21 @@
 	"setting": {
 		"urlCheck": false,
 		"es6": false,
+		"enhance": false,
 		"postcss": true,
 		"preloadBackgroundData": false,
 		"minified": false,
-		"newFeature": true,
+		"newFeature": false,
 		"coverView": true,
+		"nodeModules": false,
 		"autoAudits": false,
 		"showShadowRootInWxmlPanel": true,
 		"scopeDataCheck": false,
+		"uglifyFileName": false,
 		"checkInvalidKey": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
+		"compileHotReLoad": false,
 		"babelSetting": {
 			"ignore": [],
 			"disablePlugins": [],
@@ -27,7 +31,7 @@
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.9.2",
+	"libVersion": "",
 	"appid": "wxbd9629642c5f5b64",
 	"projectname": "goodPrinceServer",
 	"simulatorType": "wechat",
@@ -41,35 +45,13 @@
 			"current": -1,
 			"list": []
 		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
 		"game": {
-			"current": -1,
-			"list": []
-		},
-		"gamePlugin": {
 			"current": -1,
 			"list": []
 		},
 		"miniprogram": {
 			"current": -1,
-			"list": [
-				{
-					"id": -1,
-					"name": "pages/login/authentication",
-					"pathName": "pages/login/authentication",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/shop/shopCenter",
-					"pathName": "pages/shop/shopCenter",
-					"scene": null
-				}
-			]
+			"list": []
 		}
 	}
 }

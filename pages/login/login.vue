@@ -6,7 +6,7 @@
 		</view>
 
 		<view class="platform">
-			<text>无锡好印象-经营评价平台</text>
+			<text>通江好印象-经营评价平台</text>
 			<text>商家管理中心</text>
 		</view>
 
